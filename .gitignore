@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# Python & ML cache / compiled
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+env/
+ml/models/*.pkl
+!ml/models/.gitkeep
+
+# Environment variables
+.env
+!.env.example
+
+# Databases & local files
+*.sqlite3
+*.db
+!food_surplus.db
+
+# OS generated files
+.DS_Store
+Thumbs.db

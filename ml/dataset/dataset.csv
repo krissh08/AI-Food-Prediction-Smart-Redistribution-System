@@ -1,0 +1,801 @@
+meals_planned,expected_customers,day_of_week,is_weekend,event_status,has_event,weather_condition,food_category,meal_type,season,previous_avg_waste,actual_consumption,actual_surplus
+292,233,Saturday,1,None,0,Sunny,Buffet Items,Breakfast,Spring,25,241,51
+667,567,Thursday,0,None,0,Sunny,Cooked Meals,Breakfast,Spring,101,563,104
+450,441,Saturday,1,Corporate Lunch,1,Hot,Bakery,Lunch,Summer,42,425,25
+833,707,Sunday,1,Wedding,1,Sunny,Cooked Meals,Lunch,Winter,104,654,179
+890,826,Monday,0,College Fest,1,Sunny,Dairy & Drinks,Lunch,Summer,96,784,106
+1113,956,Monday,0,Conference,1,Sunny,Packaged Food,Lunch,Monsoon,118,905,208
+982,819,Saturday,1,Festival,1,Sunny,Dairy & Drinks,Dinner,Spring,169,782,200
+488,361,Saturday,1,Corporate Lunch,1,Rainy,Buffet Items,Breakfast,Spring,81,376,112
+463,380,Wednesday,0,Conference,1,Hot,Packaged Food,Dinner,Monsoon,71,376,87
+897,695,Thursday,0,Corporate Lunch,1,Hot,Buffet Items,Breakfast,Spring,128,649,248
+792,776,Sunday,1,Festival,1,Hot,Dairy & Drinks,Breakfast,Monsoon,131,792,0
+439,386,Monday,0,Festival,1,Sunny,Dairy & Drinks,Lunch,Summer,73,402,37
+924,648,Wednesday,0,Corporate Lunch,1,Rainy,Dairy & Drinks,Breakfast,Summer,159,676,248
+845,828,Monday,0,Corporate Lunch,1,Cloudy,Packaged Food,Breakfast,Winter,87,787,58
+281,243,Friday,0,None,0,Sunny,Packaged Food,Breakfast,Spring,27,253,28
+671,657,Friday,0,Corporate Lunch,1,Hot,Bakery,Dinner,Spring,88,641,30
+993,710,Monday,0,Conference,1,Rainy,Cooked Meals,Lunch,Winter,102,711,282
+801,737,Monday,0,Wedding,1,Sunny,Dairy & Drinks,Breakfast,Summer,110,762,39
+781,686,Tuesday,0,College Fest,1,Hot,Bakery,Breakfast,Winter,115,696,85
+261,183,Saturday,1,None,0,Sunny,Packaged Food,Dinner,Summer,31,179,82
+467,424,Wednesday,0,College Fest,1,Rainy,Cooked Meals,Lunch,Winter,76,441,26
+352,314,Tuesday,0,College Fest,1,Hot,Packaged Food,Breakfast,Monsoon,55,299,53
+456,397,Thursday,0,Wedding,1,Hot,Dairy & Drinks,Dinner,Monsoon,61,395,61
+999,970,Saturday,1,Wedding,1,Sunny,Cooked Meals,Dinner,Monsoon,87,999,0
+733,558,Tuesday,0,None,0,Sunny,Bakery,Lunch,Winter,104,556,177
+561,495,Thursday,0,Festival,1,Cloudy,Buffet Items,Breakfast,Summer,62,474,87
+225,170,Sunday,1,None,0,Sunny,Packaged Food,Dinner,Winter,25,159,66
+986,862,Monday,0,Conference,1,Cloudy,Buffet Items,Breakfast,Monsoon,131,883,103
+595,478,Saturday,1,Corporate Lunch,1,Cloudy,Cooked Meals,Breakfast,Summer,83,456,139
+738,682,Saturday,1,Wedding,1,Rainy,Buffet Items,Dinner,Monsoon,62,700,38
+994,852,Wednesday,0,Conference,1,Cloudy,Bakery,Dinner,Monsoon,167,792,202
+722,562,Tuesday,0,Corporate Lunch,1,Sunny,Buffet Items,Dinner,Spring,127,585,137
+811,646,Monday,0,Wedding,1,Rainy,Bakery,Dinner,Winter,139,657,154
+790,702,Tuesday,0,Conference,1,Rainy,Packaged Food,Breakfast,Spring,84,719,71
+528,515,Sunday,1,Festival,1,Sunny,Packaged Food,Breakfast,Monsoon,84,494,34
+756,609,Tuesday,0,Conference,1,Sunny,Bakery,Lunch,Summer,98,588,168
+580,568,Saturday,1,Corporate Lunch,1,Cloudy,Cooked Meals,Breakfast,Summer,71,530,50
+874,792,Saturday,1,Wedding,1,Hot,Dairy & Drinks,Dinner,Winter,70,801,73
+747,541,Sunday,1,Corporate Lunch,1,Rainy,Buffet Items,Lunch,Winter,82,518,229
+553,517,Thursday,0,Wedding,1,Hot,Buffet Items,Dinner,Spring,53,525,28
+596,528,Friday,0,Wedding,1,Hot,Dairy & Drinks,Breakfast,Summer,75,530,66
+408,314,Thursday,0,Festival,1,Rainy,Dairy & Drinks,Lunch,Spring,63,322,86
+359,327,Saturday,1,Wedding,1,Rainy,Bakery,Breakfast,Winter,60,320,39
+568,548,Friday,0,Conference,1,Hot,Packaged Food,Lunch,Spring,95,565,3
+443,308,Sunday,1,College Fest,1,Rainy,Bakery,Dinner,Monsoon,65,315,128
+925,906,Friday,0,Corporate Lunch,1,Cloudy,Packaged Food,Dinner,Monsoon,97,889,36
+643,503,Tuesday,0,Festival,1,Cloudy,Dairy & Drinks,Lunch,Spring,71,480,163
+306,242,Friday,0,None,0,Rainy,Bakery,Breakfast,Monsoon,41,235,71
+739,528,Thursday,0,None,0,Rainy,Packaged Food,Lunch,Winter,114,509,230
+820,563,Sunday,1,College Fest,1,Rainy,Packaged Food,Breakfast,Summer,79,547,273
+499,449,Thursday,0,Conference,1,Sunny,Packaged Food,Dinner,Winter,52,423,76
+726,711,Wednesday,0,Conference,1,Hot,Buffet Items,Lunch,Monsoon,92,726,0
+484,372,Saturday,1,Corporate Lunch,1,Sunny,Buffet Items,Breakfast,Winter,68,382,102
+905,753,Tuesday,0,Conference,1,Hot,Cooked Meals,Dinner,Spring,159,752,153
+469,296,Saturday,1,None,0,Rainy,Buffet Items,Breakfast,Winter,46,308,161
+1070,717,Friday,0,Festival,1,Rainy,Cooked Meals,Dinner,Summer,131,692,378
+258,208,Wednesday,0,None,0,Cloudy,Cooked Meals,Lunch,Monsoon,43,201,57
+1086,943,Thursday,0,Festival,1,Rainy,Packaged Food,Breakfast,Summer,151,968,118
+870,801,Wednesday,0,Conference,1,Sunny,Buffet Items,Lunch,Spring,143,739,131
+761,597,Tuesday,0,College Fest,1,Rainy,Buffet Items,Lunch,Summer,75,589,172
+902,857,Tuesday,0,Festival,1,Hot,Packaged Food,Dinner,Spring,98,790,112
+875,708,Thursday,0,Festival,1,Rainy,Buffet Items,Dinner,Summer,131,681,194
+603,590,Wednesday,0,Wedding,1,Cloudy,Bakery,Breakfast,Spring,59,595,8
+565,457,Saturday,1,College Fest,1,Cloudy,Dairy & Drinks,Dinner,Summer,45,431,134
+542,531,Friday,0,Conference,1,Cloudy,Cooked Meals,Breakfast,Summer,74,542,0
+748,726,Thursday,0,College Fest,1,Hot,Buffet Items,Breakfast,Winter,96,674,74
+400,327,Friday,0,Festival,1,Sunny,Bakery,Breakfast,Summer,63,326,74
+961,823,Tuesday,0,Corporate Lunch,1,Hot,Packaged Food,Lunch,Summer,148,822,139
+471,333,Sunday,1,Conference,1,Rainy,Buffet Items,Dinner,Winter,65,325,146
+614,381,Wednesday,0,None,0,Rainy,Buffet Items,Dinner,Summer,97,363,251
+634,462,Friday,0,Festival,1,Rainy,Packaged Food,Breakfast,Spring,88,472,162
+740,639,Sunday,1,Corporate Lunch,1,Cloudy,Packaged Food,Breakfast,Monsoon,91,632,108
+176,127,Friday,0,None,0,Hot,Buffet Items,Dinner,Summer,28,132,44
+549,495,Friday,0,Corporate Lunch,1,Sunny,Buffet Items,Dinner,Winter,98,473,76
+753,629,Thursday,0,Festival,1,Hot,Cooked Meals,Lunch,Summer,91,591,162
+420,343,Thursday,0,Wedding,1,Hot,Dairy & Drinks,Breakfast,Monsoon,69,350,70
+680,477,Sunday,1,None,0,Hot,Packaged Food,Breakfast,Spring,106,477,203
+381,336,Tuesday,0,Wedding,1,Rainy,Buffet Items,Lunch,Monsoon,51,316,65
+535,524,Friday,0,College Fest,1,Sunny,Bakery,Breakfast,Monsoon,70,530,5
+851,759,Wednesday,0,College Fest,1,Hot,Packaged Food,Breakfast,Monsoon,142,748,103
+152,107,Sunday,1,None,0,Cloudy,Packaged Food,Lunch,Summer,27,106,46
+731,701,Thursday,0,Conference,1,Hot,Dairy & Drinks,Lunch,Summer,122,729,2
+765,699,Saturday,1,Conference,1,Hot,Bakery,Lunch,Winter,136,677,88
+1011,809,Sunday,1,Festival,1,Rainy,Packaged Food,Breakfast,Spring,134,790,221
+226,151,Thursday,0,None,0,Rainy,Packaged Food,Dinner,Spring,33,145,81
+791,626,Saturday,1,None,0,Cloudy,Dairy & Drinks,Lunch,Summer,66,646,145
+944,761,Monday,0,Conference,1,Cloudy,Bakery,Dinner,Winter,117,786,158
+641,545,Saturday,1,Wedding,1,Sunny,Cooked Meals,Lunch,Winter,87,539,102
+1058,712,Sunday,1,Conference,1,Rainy,Bakery,Breakfast,Monsoon,111,697,361
+438,429,Wednesday,0,Festival,1,Sunny,Packaged Food,Lunch,Spring,77,411,27
+771,646,Saturday,1,Wedding,1,Hot,Buffet Items,Breakfast,Monsoon,138,642,129
+770,682,Wednesday,0,None,0,Hot,Buffet Items,Breakfast,Winter,131,701,69
+949,906,Sunday,1,Conference,1,Cloudy,Bakery,Dinner,Spring,155,911,38
+743,545,Saturday,1,None,0,Sunny,Buffet Items,Lunch,Winter,83,565,178
+921,785,Thursday,0,Conference,1,Rainy,Bakery,Dinner,Summer,118,806,115
+587,575,Sunday,1,Wedding,1,Cloudy,Cooked Meals,Lunch,Winter,104,583,4
+657,525,Sunday,1,Corporate Lunch,1,Cloudy,Cooked Meals,Lunch,Winter,69,534,123
+738,702,Thursday,0,Festival,1,Cloudy,Cooked Meals,Dinner,Spring,104,675,63
+269,171,Saturday,1,None,0,Hot,Buffet Items,Dinner,Monsoon,34,164,105
+910,737,Monday,0,Conference,1,Rainy,Packaged Food,Lunch,Summer,148,740,170
+585,510,Friday,0,College Fest,1,Cloudy,Cooked Meals,Dinner,Summer,104,493,92
+691,568,Wednesday,0,Corporate Lunch,1,Cloudy,Cooked Meals,Lunch,Summer,101,556,135
+579,517,Saturday,1,Festival,1,Sunny,Cooked Meals,Lunch,Spring,58,527,52
+752,736,Tuesday,0,Conference,1,Cloudy,Bakery,Dinner,Winter,120,728,24
+643,539,Monday,0,Festival,1,Sunny,Bakery,Breakfast,Summer,99,499,144
+675,572,Friday,0,None,0,Sunny,Packaged Food,Lunch,Summer,68,559,116
+212,201,Friday,0,None,0,Cloudy,Packaged Food,Dinner,Winter,25,207,5
+909,709,Monday,0,College Fest,1,Hot,Cooked Meals,Breakfast,Summer,122,710,199
+554,536,Wednesday,0,College Fest,1,Cloudy,Packaged Food,Dinner,Monsoon,86,538,16
+808,714,Saturday,1,Conference,1,Hot,Packaged Food,Breakfast,Monsoon,99,665,143
+341,328,Saturday,1,Wedding,1,Cloudy,Bakery,Dinner,Monsoon,52,305,36
+480,418,Sunday,1,Conference,1,Sunny,Dairy & Drinks,Dinner,Summer,80,425,55
+256,200,Saturday,1,None,0,Cloudy,Dairy & Drinks,Lunch,Summer,26,201,55
+905,840,Monday,0,Wedding,1,Cloudy,Cooked Meals,Lunch,Spring,133,840,65
+466,433,Friday,0,None,0,Cloudy,Cooked Meals,Breakfast,Summer,45,418,48
+534,481,Tuesday,0,Corporate Lunch,1,Hot,Cooked Meals,Breakfast,Winter,51,470,64
+342,280,Wednesday,0,Festival,1,Cloudy,Dairy & Drinks,Dinner,Winter,36,282,60
+584,551,Saturday,1,College Fest,1,Hot,Dairy & Drinks,Lunch,Monsoon,63,537,47
+352,309,Saturday,1,Corporate Lunch,1,Hot,Dairy & Drinks,Dinner,Summer,38,284,68
+384,363,Tuesday,0,Conference,1,Cloudy,Buffet Items,Lunch,Winter,57,351,33
+700,608,Friday,0,Corporate Lunch,1,Cloudy,Cooked Meals,Lunch,Winter,86,584,116
+518,451,Thursday,0,Festival,1,Hot,Buffet Items,Breakfast,Monsoon,84,451,67
+753,602,Wednesday,0,None,0,Hot,Cooked Meals,Breakfast,Monsoon,125,559,194
+934,661,Saturday,1,Wedding,1,Rainy,Buffet Items,Breakfast,Winter,142,638,296
+562,416,Sunday,1,Festival,1,Rainy,Bakery,Breakfast,Spring,98,386,176
+992,932,Saturday,1,College Fest,1,Hot,Dairy & Drinks,Dinner,Monsoon,141,962,30
+682,538,Tuesday,0,College Fest,1,Sunny,Packaged Food,Lunch,Summer,85,516,166
+1031,927,Monday,0,Wedding,1,Cloudy,Cooked Meals,Dinner,Winter,164,919,112
+801,735,Monday,0,College Fest,1,Rainy,Buffet Items,Dinner,Monsoon,142,756,45
+833,673,Monday,0,Corporate Lunch,1,Rainy,Cooked Meals,Breakfast,Monsoon,100,643,190
+488,455,Wednesday,0,Festival,1,Sunny,Buffet Items,Breakfast,Summer,71,461,27
+687,673,Friday,0,Conference,1,Cloudy,Cooked Meals,Dinner,Spring,95,653,34
+813,698,Monday,0,Wedding,1,Hot,Buffet Items,Breakfast,Winter,82,658,155
+404,368,Sunday,1,College Fest,1,Rainy,Bakery,Breakfast,Spring,68,378,26
+448,371,Monday,0,Festival,1,Cloudy,Dairy & Drinks,Breakfast,Monsoon,76,371,77
+860,738,Saturday,1,College Fest,1,Sunny,Packaged Food,Lunch,Spring,114,722,138
+918,679,Wednesday,0,College Fest,1,Rainy,Buffet Items,Dinner,Monsoon,148,709,209
+771,678,Sunday,1,Corporate Lunch,1,Rainy,Buffet Items,Breakfast,Monsoon,68,634,137
+585,573,Tuesday,0,Wedding,1,Hot,Dairy & Drinks,Breakfast,Monsoon,101,585,0
+545,517,Thursday,0,None,0,Hot,Dairy & Drinks,Lunch,Spring,45,500,45
+777,761,Monday,0,Festival,1,Cloudy,Bakery,Breakfast,Winter,116,713,64
+683,569,Thursday,0,Corporate Lunch,1,Sunny,Cooked Meals,Breakfast,Summer,83,568,115
+601,474,Sunday,1,Wedding,1,Rainy,Buffet Items,Breakfast,Winter,78,487,114
+151,114,Friday,0,None,0,Rainy,Bakery,Lunch,Monsoon,22,111,40
+872,784,Monday,0,Corporate Lunch,1,Cloudy,Cooked Meals,Dinner,Winter,91,821,51
+1033,977,Monday,0,Wedding,1,Sunny,Buffet Items,Breakfast,Winter,117,943,90
+404,394,Saturday,1,Conference,1,Hot,Packaged Food,Dinner,Spring,40,364,40
+927,788,Sunday,1,Conference,1,Sunny,Buffet Items,Lunch,Monsoon,107,744,183
+597,498,Sunday,1,None,0,Cloudy,Buffet Items,Breakfast,Summer,70,516,81
+520,456,Tuesday,0,College Fest,1,Hot,Buffet Items,Dinner,Summer,50,478,42
+677,624,Wednesday,0,Wedding,1,Sunny,Cooked Meals,Lunch,Summer,77,630,47
+327,306,Monday,0,Festival,1,Cloudy,Dairy & Drinks,Lunch,Summer,50,301,26
+185,117,Tuesday,0,None,0,Rainy,Dairy & Drinks,Dinner,Monsoon,21,117,68
+604,465,Friday,0,None,0,Rainy,Packaged Food,Lunch,Summer,72,459,145
+893,661,Saturday,1,Wedding,1,Rainy,Cooked Meals,Breakfast,Spring,111,630,263
+440,364,Friday,0,Wedding,1,Hot,Bakery,Breakfast,Spring,70,382,58
+774,638,Sunday,1,Wedding,1,Cloudy,Cooked Meals,Dinner,Summer,75,645,129
+694,553,Wednesday,0,Corporate Lunch,1,Rainy,Cooked Meals,Breakfast,Spring,123,542,152
+874,763,Tuesday,0,Corporate Lunch,1,Sunny,Cooked Meals,Lunch,Monsoon,80,758,116
+605,592,Wednesday,0,Festival,1,Sunny,Packaged Food,Lunch,Summer,94,589,16
+603,504,Tuesday,0,College Fest,1,Sunny,Cooked Meals,Dinner,Spring,105,478,125
+538,458,Friday,0,Wedding,1,Sunny,Buffet Items,Breakfast,Summer,52,451,87
+837,733,Friday,0,Conference,1,Rainy,Dairy & Drinks,Dinner,Summer,115,735,102
+986,908,Saturday,1,Conference,1,Hot,Dairy & Drinks,Dinner,Winter,126,948,38
+351,310,Sunday,1,Festival,1,Hot,Buffet Items,Lunch,Winter,49,293,58
+760,688,Wednesday,0,Festival,1,Cloudy,Buffet Items,Lunch,Spring,81,674,86
+987,844,Tuesday,0,Conference,1,Sunny,Cooked Meals,Lunch,Monsoon,111,794,193
+896,797,Friday,0,Festival,1,Cloudy,Bakery,Breakfast,Monsoon,156,735,161
+311,230,Friday,0,College Fest,1,Rainy,Bakery,Dinner,Summer,33,231,80
+562,444,Monday,0,None,0,Hot,Bakery,Lunch,Summer,77,431,131
+884,866,Tuesday,0,Wedding,1,Cloudy,Cooked Meals,Lunch,Monsoon,82,865,19
+447,411,Monday,0,College Fest,1,Cloudy,Buffet Items,Dinner,Summer,37,380,67
+1098,983,Saturday,1,Wedding,1,Hot,Dairy & Drinks,Lunch,Spring,105,982,116
+902,784,Friday,0,Festival,1,Cloudy,Dairy & Drinks,Lunch,Monsoon,82,755,147
+768,739,Thursday,0,Corporate Lunch,1,Cloudy,Cooked Meals,Dinner,Monsoon,78,735,33
+611,563,Monday,0,Corporate Lunch,1,Hot,Bakery,Dinner,Monsoon,55,587,24
+563,510,Monday,0,College Fest,1,Cloudy,Packaged Food,Breakfast,Monsoon,92,500,63
+639,428,Saturday,1,None,0,Rainy,Dairy & Drinks,Breakfast,Summer,72,444,195
+573,516,Wednesday,0,Festival,1,Cloudy,Dairy & Drinks,Lunch,Spring,62,539,34
+750,646,Wednesday,0,Festival,1,Rainy,Packaged Food,Lunch,Monsoon,110,604,146
+788,745,Thursday,0,College Fest,1,Cloudy,Bakery,Lunch,Winter,83,728,60
+417,331,Thursday,0,Conference,1,Rainy,Dairy & Drinks,Lunch,Summer,55,333,84
+758,702,Saturday,1,Conference,1,Sunny,Cooked Meals,Lunch,Summer,134,733,25
+626,516,Tuesday,0,College Fest,1,Hot,Packaged Food,Dinner,Spring,90,526,100
+501,437,Tuesday,0,Corporate Lunch,1,Sunny,Bakery,Lunch,Spring,88,455,46
+493,380,Wednesday,0,None,0,Sunny,Buffet Items,Dinner,Winter,66,398,95
+629,607,Thursday,0,Conference,1,Hot,Buffet Items,Breakfast,Winter,51,615,14
+818,596,Wednesday,0,Wedding,1,Rainy,Bakery,Dinner,Monsoon,104,624,194
+423,396,Tuesday,0,None,0,Cloudy,Packaged Food,Breakfast,Monsoon,64,379,44
+804,662,Monday,0,Wedding,1,Cloudy,Bakery,Breakfast,Winter,135,688,116
+719,568,Sunday,1,Wedding,1,Sunny,Buffet Items,Lunch,Spring,101,577,142
+677,663,Thursday,0,Festival,1,Hot,Dairy & Drinks,Dinner,Spring,84,617,60
+1041,942,Saturday,1,Wedding,1,Sunny,Dairy & Drinks,Breakfast,Winter,117,884,157
+573,526,Friday,0,College Fest,1,Sunny,Bakery,Dinner,Monsoon,75,514,59
+373,303,Thursday,0,Corporate Lunch,1,Sunny,Dairy & Drinks,Lunch,Summer,32,287,86
+741,615,Thursday,0,Wedding,1,Sunny,Dairy & Drinks,Breakfast,Winter,106,576,165
+732,598,Saturday,1,Festival,1,Hot,Buffet Items,Lunch,Monsoon,68,618,114
+823,776,Sunday,1,Wedding,1,Sunny,Bakery,Dinner,Monsoon,67,714,109
+620,527,Wednesday,0,College Fest,1,Hot,Dairy & Drinks,Lunch,Spring,94,549,71
+361,258,Monday,0,None,0,Hot,Dairy & Drinks,Breakfast,Spring,44,257,104
+773,633,Saturday,1,Festival,1,Sunny,Bakery,Dinner,Winter,66,653,120
+569,481,Friday,0,Wedding,1,Rainy,Dairy & Drinks,Lunch,Summer,61,468,101
+546,398,Friday,0,Corporate Lunch,1,Rainy,Packaged Food,Dinner,Monsoon,81,393,153
+713,605,Thursday,0,Conference,1,Cloudy,Packaged Food,Breakfast,Monsoon,90,567,146
+709,588,Monday,0,Corporate Lunch,1,Hot,Packaged Food,Dinner,Spring,88,547,162
+769,545,Wednesday,0,None,0,Rainy,Cooked Meals,Lunch,Monsoon,120,514,255
+804,717,Saturday,1,Festival,1,Rainy,Packaged Food,Breakfast,Summer,124,728,76
+890,642,Sunday,1,College Fest,1,Rainy,Dairy & Drinks,Dinner,Spring,128,629,261
+555,543,Wednesday,0,Wedding,1,Cloudy,Dairy & Drinks,Lunch,Monsoon,95,555,0
+403,347,Wednesday,0,Wedding,1,Hot,Cooked Meals,Dinner,Spring,49,345,58
+901,854,Tuesday,0,Conference,1,Cloudy,Bakery,Lunch,Spring,146,814,87
+458,437,Saturday,1,Festival,1,Hot,Packaged Food,Breakfast,Summer,61,454,4
+156,110,Saturday,1,None,0,Sunny,Cooked Meals,Dinner,Winter,23,104,52
+753,586,Monday,0,Conference,1,Hot,Buffet Items,Breakfast,Monsoon,100,540,213
+460,450,Wednesday,0,Corporate Lunch,1,Cloudy,Cooked Meals,Dinner,Monsoon,65,428,32
+782,735,Wednesday,0,Wedding,1,Cloudy,Packaged Food,Breakfast,Summer,116,697,85
+536,420,Sunday,1,None,0,Sunny,Cooked Meals,Lunch,Monsoon,52,386,150
+539,528,Thursday,0,College Fest,1,Cloudy,Dairy & Drinks,Breakfast,Winter,57,524,15
+670,645,Monday,0,Festival,1,Cloudy,Dairy & Drinks,Dinner,Winter,63,610,60
+888,829,Sunday,1,Festival,1,Hot,Cooked Meals,Lunch,Spring,119,835,53
+329,242,Thursday,0,Festival,1,Rainy,Cooked Meals,Dinner,Summer,57,246,83
+574,520,Thursday,0,Wedding,1,Sunny,Buffet Items,Lunch,Monsoon,79,490,84
+234,179,Thursday,0,None,0,Cloudy,Bakery,Dinner,Winter,37,173,61
+344,337,Tuesday,0,Festival,1,Hot,Buffet Items,Lunch,Winter,31,343,1
+361,288,Monday,0,Conference,1,Hot,Packaged Food,Dinner,Monsoon,57,287,74
+521,510,Sunday,1,College Fest,1,Sunny,Buffet Items,Lunch,Monsoon,71,521,0
+626,548,Tuesday,0,Festival,1,Hot,Bakery,Breakfast,Summer,76,535,91
+758,647,Thursday,0,None,0,Cloudy,Buffet Items,Breakfast,Monsoon,70,633,125
+785,705,Monday,0,College Fest,1,Cloudy,Dairy & Drinks,Lunch,Summer,109,708,77
+904,659,Wednesday,0,Wedding,1,Rainy,Packaged Food,Lunch,Spring,143,689,215
+878,812,Wednesday,0,College Fest,1,Cloudy,Packaged Food,Lunch,Winter,118,819,59
+840,640,Saturday,1,College Fest,1,Rainy,Packaged Food,Lunch,Winter,127,643,197
+948,881,Sunday,1,College Fest,1,Sunny,Packaged Food,Dinner,Monsoon,115,910,38
+585,544,Monday,0,Wedding,1,Sunny,Cooked Meals,Breakfast,Summer,84,546,39
+570,515,Sunday,1,Wedding,1,Hot,Cooked Meals,Breakfast,Winter,78,512,58
+609,539,Thursday,0,Wedding,1,Hot,Packaged Food,Dinner,Spring,53,560,49
+916,651,Sunday,1,Festival,1,Rainy,Buffet Items,Lunch,Summer,137,636,280
+173,157,Wednesday,0,None,0,Cloudy,Cooked Meals,Dinner,Winter,25,157,16
+731,573,Tuesday,0,Festival,1,Rainy,Dairy & Drinks,Breakfast,Spring,72,574,157
+861,738,Saturday,1,College Fest,1,Hot,Cooked Meals,Dinner,Spring,92,699,162
+483,334,Saturday,1,None,0,Sunny,Dairy & Drinks,Breakfast,Summer,62,336,147
+696,682,Saturday,1,Wedding,1,Hot,Dairy & Drinks,Lunch,Winter,104,696,0
+572,456,Wednesday,0,Corporate Lunch,1,Sunny,Bakery,Lunch,Winter,67,427,145
+1037,990,Friday,0,Conference,1,Hot,Packaged Food,Breakfast,Monsoon,140,1037,0
+897,757,Thursday,0,Wedding,1,Rainy,Bakery,Lunch,Monsoon,106,715,182
+856,838,Friday,0,Corporate Lunch,1,Hot,Packaged Food,Dinner,Monsoon,71,779,77
+873,711,Sunday,1,Conference,1,Cloudy,Cooked Meals,Lunch,Spring,136,722,151
+1016,995,Friday,0,Corporate Lunch,1,Sunny,Dairy & Drinks,Breakfast,Summer,158,1013,3
+777,703,Thursday,0,Corporate Lunch,1,Rainy,Packaged Food,Breakfast,Spring,96,721,56
+1035,800,Monday,0,Conference,1,Rainy,Dairy & Drinks,Dinner,Summer,166,820,215
+831,781,Friday,0,Wedding,1,Cloudy,Dairy & Drinks,Dinner,Spring,137,745,86
+279,203,Saturday,1,None,0,Rainy,Packaged Food,Breakfast,Summer,29,195,84
+998,845,Sunday,1,Festival,1,Hot,Packaged Food,Breakfast,Summer,156,864,134
+733,578,Thursday,0,Corporate Lunch,1,Cloudy,Buffet Items,Lunch,Monsoon,112,586,147
+720,624,Thursday,0,Festival,1,Cloudy,Cooked Meals,Dinner,Monsoon,117,595,125
+310,205,Wednesday,0,Corporate Lunch,1,Rainy,Dairy & Drinks,Lunch,Summer,51,191,119
+599,587,Thursday,0,College Fest,1,Sunny,Packaged Food,Breakfast,Spring,69,547,52
+598,469,Monday,0,Wedding,1,Rainy,Cooked Meals,Lunch,Summer,55,460,138
+593,511,Tuesday,0,Corporate Lunch,1,Hot,Cooked Meals,Breakfast,Summer,70,474,119
+290,204,Saturday,1,None,0,Sunny,Buffet Items,Lunch,Summer,41,210,80
+1040,840,Saturday,1,Conference,1,Sunny,Dairy & Drinks,Dinner,Winter,161,796,244
+585,478,Thursday,0,Corporate Lunch,1,Hot,Bakery,Breakfast,Winter,71,461,124
+645,505,Sunday,1,Conference,1,Rainy,Buffet Items,Dinner,Winter,53,526,119
+726,690,Sunday,1,Festival,1,Cloudy,Bakery,Dinner,Spring,75,706,20
+690,580,Thursday,0,None,0,Rainy,Packaged Food,Dinner,Winter,77,560,130
+976,956,Thursday,0,Corporate Lunch,1,Hot,Buffet Items,Dinner,Spring,79,952,24
+793,696,Tuesday,0,None,0,Sunny,Packaged Food,Dinner,Summer,97,709,84
+230,168,Thursday,0,None,0,Rainy,Buffet Items,Breakfast,Summer,30,172,58
+508,435,Thursday,0,Corporate Lunch,1,Sunny,Buffet Items,Dinner,Monsoon,71,406,102
+302,240,Monday,0,Wedding,1,Rainy,Cooked Meals,Breakfast,Spring,31,246,56
+758,677,Wednesday,0,Conference,1,Cloudy,Cooked Meals,Breakfast,Summer,108,708,50
+666,545,Thursday,0,College Fest,1,Cloudy,Cooked Meals,Lunch,Spring,101,542,124
+417,369,Tuesday,0,Festival,1,Sunny,Cooked Meals,Breakfast,Spring,73,348,69
+910,858,Monday,0,Corporate Lunch,1,Hot,Bakery,Lunch,Spring,106,798,112
+677,663,Friday,0,Festival,1,Sunny,Bakery,Breakfast,Winter,75,676,1
+692,678,Monday,0,Corporate Lunch,1,Hot,Cooked Meals,Lunch,Spring,80,645,47
+333,264,Thursday,0,Conference,1,Rainy,Bakery,Breakfast,Monsoon,37,243,90
+852,769,Sunday,1,Festival,1,Hot,Buffet Items,Breakfast,Spring,80,804,48
+531,432,Wednesday,0,None,0,Sunny,Bakery,Dinner,Monsoon,73,439,92
+864,846,Friday,0,Conference,1,Hot,Cooked Meals,Dinner,Winter,96,807,57
+508,497,Sunday,1,College Fest,1,Cloudy,Buffet Items,Lunch,Summer,46,506,2
+510,447,Monday,0,Conference,1,Hot,Packaged Food,Lunch,Monsoon,64,437,73
+767,474,Sunday,1,None,0,Sunny,Bakery,Dinner,Summer,68,456,311
+725,710,Tuesday,0,Wedding,1,Hot,Dairy & Drinks,Breakfast,Summer,90,690,35
+424,281,Saturday,1,Corporate Lunch,1,Rainy,Cooked Meals,Lunch,Winter,68,263,161
+331,324,Wednesday,0,Festival,1,Sunny,Dairy & Drinks,Dinner,Summer,53,325,6
+658,614,Monday,0,Wedding,1,Sunny,Cooked Meals,Lunch,Winter,54,596,62
+602,482,Saturday,1,College Fest,1,Rainy,Buffet Items,Breakfast,Spring,87,482,120
+677,600,Thursday,0,College Fest,1,Hot,Cooked Meals,Breakfast,Summer,71,614,63
+880,847,Sunday,1,Corporate Lunch,1,Sunny,Packaged Food,Dinner,Summer,98,841,39
+509,492,Wednesday,0,Conference,1,Sunny,Buffet Items,Dinner,Spring,64,504,5
+564,442,Wednesday,0,Corporate Lunch,1,Rainy,Bakery,Breakfast,Spring,98,450,114
+937,918,Friday,0,College Fest,1,Cloudy,Bakery,Breakfast,Spring,77,937,0
+884,631,Saturday,1,Wedding,1,Rainy,Dairy & Drinks,Breakfast,Monsoon,72,629,255
+498,437,Thursday,0,None,0,Cloudy,Dairy & Drinks,Breakfast,Spring,81,454,44
+263,239,Wednesday,0,None,0,Sunny,Bakery,Dinner,Spring,46,246,17
+641,507,Wednesday,0,Festival,1,Hot,Dairy & Drinks,Breakfast,Summer,102,528,113
+648,587,Thursday,0,Festival,1,Cloudy,Bakery,Dinner,Summer,96,563,85
+590,513,Tuesday,0,Conference,1,Sunny,Dairy & Drinks,Lunch,Winter,84,512,78
+581,550,Monday,0,College Fest,1,Rainy,Buffet Items,Dinner,Winter,87,512,69
+527,495,Saturday,1,Festival,1,Cloudy,Packaged Food,Breakfast,Summer,80,506,21
+979,853,Monday,0,College Fest,1,Hot,Packaged Food,Breakfast,Monsoon,125,796,183
+359,237,Sunday,1,Corporate Lunch,1,Rainy,Bakery,Lunch,Winter,60,228,131
+1015,994,Tuesday,0,Festival,1,Sunny,Dairy & Drinks,Breakfast,Summer,147,970,45
+709,499,Friday,0,College Fest,1,Rainy,Cooked Meals,Breakfast,Summer,75,506,203
+975,865,Wednesday,0,Wedding,1,Rainy,Cooked Meals,Breakfast,Monsoon,106,843,132
+504,483,Saturday,1,Festival,1,Hot,Bakery,Breakfast,Winter,46,474,30
+507,453,Sunday,1,College Fest,1,Hot,Packaged Food,Dinner,Summer,59,468,39
+381,346,Thursday,0,None,0,Cloudy,Packaged Food,Lunch,Summer,36,343,38
+909,890,Saturday,1,Festival,1,Sunny,Cooked Meals,Dinner,Summer,149,882,27
+1061,874,Sunday,1,Corporate Lunch,1,Hot,Dairy & Drinks,Dinner,Monsoon,175,848,213
+669,476,Monday,0,Corporate Lunch,1,Rainy,Cooked Meals,Lunch,Spring,99,442,227
+340,256,Tuesday,0,Festival,1,Rainy,Dairy & Drinks,Lunch,Summer,42,244,96
+301,229,Sunday,1,None,0,Hot,Cooked Meals,Lunch,Spring,27,239,62
+737,641,Monday,0,Corporate Lunch,1,Sunny,Buffet Items,Dinner,Summer,61,640,97
+390,343,Wednesday,0,College Fest,1,Rainy,Dairy & Drinks,Dinner,Monsoon,67,348,42
+653,597,Wednesday,0,None,0,Cloudy,Buffet Items,Lunch,Summer,115,602,51
+830,764,Tuesday,0,Conference,1,Cloudy,Packaged Food,Lunch,Summer,134,723,107
+396,375,Saturday,1,College Fest,1,Cloudy,Cooked Meals,Dinner,Spring,52,383,13
+405,253,Friday,0,None,0,Rainy,Bakery,Breakfast,Winter,40,244,161
+592,529,Wednesday,0,College Fest,1,Hot,Cooked Meals,Dinner,Winter,75,552,40
+548,468,Friday,0,Wedding,1,Cloudy,Bakery,Lunch,Winter,96,465,83
+780,665,Sunday,1,Conference,1,Rainy,Bakery,Lunch,Monsoon,72,652,128
+639,626,Tuesday,0,Corporate Lunch,1,Sunny,Bakery,Lunch,Summer,65,613,26
+942,923,Wednesday,0,Festival,1,Hot,Dairy & Drinks,Breakfast,Winter,131,916,26
+696,588,Wednesday,0,Wedding,1,Sunny,Packaged Food,Breakfast,Summer,121,591,105
+514,435,Saturday,1,Wedding,1,Rainy,Bakery,Dinner,Spring,48,418,96
+763,735,Monday,0,Festival,1,Hot,Buffet Items,Lunch,Monsoon,123,763,0
+746,571,Wednesday,0,Festival,1,Rainy,Dairy & Drinks,Dinner,Monsoon,81,566,180
+397,347,Thursday,0,Conference,1,Cloudy,Dairy & Drinks,Breakfast,Summer,63,333,64
+490,389,Wednesday,0,Wedding,1,Cloudy,Dairy & Drinks,Lunch,Monsoon,69,387,103
+686,669,Thursday,0,Conference,1,Sunny,Packaged Food,Dinner,Summer,78,686,0
+456,319,Friday,0,College Fest,1,Rainy,Buffet Items,Dinner,Spring,57,295,161
+990,839,Tuesday,0,Conference,1,Rainy,Packaged Food,Breakfast,Spring,82,813,177
+441,347,Tuesday,0,Festival,1,Cloudy,Cooked Meals,Lunch,Spring,73,329,112
+437,424,Wednesday,0,Conference,1,Sunny,Packaged Food,Dinner,Summer,66,406,31
+830,755,Friday,0,Corporate Lunch,1,Cloudy,Packaged Food,Dinner,Spring,141,710,120
+653,509,Sunday,1,College Fest,1,Sunny,Bakery,Breakfast,Spring,98,476,177
+758,656,Sunday,1,None,0,Hot,Buffet Items,Dinner,Winter,62,659,99
+710,481,Saturday,1,None,0,Hot,Packaged Food,Lunch,Winter,105,455,255
+1042,985,Monday,0,Wedding,1,Hot,Cooked Meals,Dinner,Summer,136,1021,21
+353,300,Friday,0,None,0,Cloudy,Cooked Meals,Breakfast,Monsoon,57,306,47
+938,919,Tuesday,0,Wedding,1,Hot,Buffet Items,Breakfast,Winter,97,902,36
+645,514,Monday,0,Festival,1,Sunny,Cooked Meals,Dinner,Monsoon,58,521,124
+737,504,Wednesday,0,Festival,1,Rainy,Packaged Food,Lunch,Summer,118,482,255
+560,519,Wednesday,0,College Fest,1,Sunny,Cooked Meals,Breakfast,Winter,98,537,23
+468,408,Wednesday,0,Festival,1,Sunny,Buffet Items,Lunch,Spring,69,419,49
+439,339,Thursday,0,College Fest,1,Rainy,Cooked Meals,Breakfast,Winter,43,341,98
+592,506,Thursday,0,Wedding,1,Sunny,Bakery,Lunch,Monsoon,65,482,110
+862,733,Saturday,1,Festival,1,Rainy,Buffet Items,Dinner,Winter,81,735,127
+984,877,Sunday,1,Corporate Lunch,1,Sunny,Cooked Meals,Dinner,Spring,152,825,159
+977,865,Wednesday,0,Conference,1,Cloudy,Buffet Items,Breakfast,Spring,121,804,173
+498,466,Friday,0,College Fest,1,Sunny,Packaged Food,Lunch,Summer,41,453,45
+670,563,Friday,0,None,0,Sunny,Dairy & Drinks,Dinner,Summer,84,565,105
+1019,946,Wednesday,0,Wedding,1,Sunny,Bakery,Lunch,Summer,154,951,68
+798,670,Monday,0,None,0,Rainy,Cooked Meals,Lunch,Summer,119,661,137
+424,386,Monday,0,Conference,1,Hot,Bakery,Dinner,Monsoon,50,401,23
+1112,1027,Thursday,0,Conference,1,Cloudy,Cooked Meals,Lunch,Winter,139,1063,49
+1055,826,Friday,0,Corporate Lunch,1,Rainy,Packaged Food,Breakfast,Winter,180,843,212
+1019,891,Saturday,1,Corporate Lunch,1,Rainy,Bakery,Breakfast,Monsoon,174,933,86
+919,738,Sunday,1,Conference,1,Cloudy,Packaged Food,Lunch,Summer,142,746,173
+508,467,Wednesday,0,Festival,1,Cloudy,Dairy & Drinks,Dinner,Spring,74,450,58
+562,423,Saturday,1,Festival,1,Rainy,Dairy & Drinks,Dinner,Summer,68,425,137
+372,304,Saturday,1,Corporate Lunch,1,Cloudy,Packaged Food,Breakfast,Winter,57,287,85
+650,587,Tuesday,0,Wedding,1,Cloudy,Bakery,Breakfast,Summer,92,574,76
+973,832,Saturday,1,Festival,1,Rainy,Dairy & Drinks,Lunch,Spring,114,770,203
+558,526,Thursday,0,Festival,1,Cloudy,Dairy & Drinks,Breakfast,Winter,90,543,15
+523,476,Saturday,1,Festival,1,Cloudy,Dairy & Drinks,Dinner,Spring,92,442,81
+677,557,Saturday,1,Corporate Lunch,1,Sunny,Packaged Food,Breakfast,Monsoon,54,573,104
+874,753,Thursday,0,Festival,1,Rainy,Cooked Meals,Breakfast,Summer,138,722,152
+571,452,Friday,0,Wedding,1,Sunny,Buffet Items,Dinner,Spring,76,440,131
+681,482,Monday,0,Wedding,1,Rainy,Bakery,Dinner,Summer,92,473,208
+767,751,Sunday,1,Festival,1,Sunny,Cooked Meals,Dinner,Summer,134,751,16
+988,855,Saturday,1,Wedding,1,Hot,Cooked Meals,Lunch,Summer,116,877,111
+529,489,Sunday,1,Corporate Lunch,1,Hot,Packaged Food,Breakfast,Summer,92,460,69
+897,720,Friday,0,Corporate Lunch,1,Sunny,Cooked Meals,Breakfast,Spring,159,728,169
+598,463,Sunday,1,College Fest,1,Sunny,Bakery,Breakfast,Monsoon,81,473,125
+998,857,Friday,0,Conference,1,Cloudy,Packaged Food,Lunch,Monsoon,133,863,135
+853,759,Saturday,1,Festival,1,Sunny,Dairy & Drinks,Breakfast,Winter,119,765,88
+775,689,Wednesday,0,College Fest,1,Hot,Packaged Food,Dinner,Winter,123,668,107
+402,354,Friday,0,Wedding,1,Rainy,Buffet Items,Dinner,Summer,48,352,50
+366,293,Friday,0,None,0,Cloudy,Bakery,Dinner,Summer,48,294,72
+413,330,Tuesday,0,Conference,1,Rainy,Dairy & Drinks,Lunch,Spring,73,335,78
+531,439,Friday,0,College Fest,1,Sunny,Buffet Items,Dinner,Winter,61,458,73
+529,423,Saturday,1,Festival,1,Rainy,Cooked Meals,Lunch,Winter,50,427,102
+633,620,Friday,0,Wedding,1,Cloudy,Packaged Food,Breakfast,Winter,68,622,11
+815,695,Wednesday,0,Conference,1,Cloudy,Packaged Food,Lunch,Monsoon,114,655,160
+910,757,Sunday,1,Wedding,1,Rainy,Dairy & Drinks,Breakfast,Summer,146,758,152
+1034,956,Friday,0,College Fest,1,Rainy,Cooked Meals,Dinner,Summer,105,924,110
+749,680,Sunday,1,Corporate Lunch,1,Cloudy,Bakery,Lunch,Winter,120,700,49
+458,373,Friday,0,Festival,1,Rainy,Dairy & Drinks,Breakfast,Monsoon,70,350,108
+420,297,Wednesday,0,None,0,Rainy,Packaged Food,Breakfast,Winter,71,281,139
+607,577,Wednesday,0,College Fest,1,Hot,Packaged Food,Breakfast,Winter,99,593,14
+774,619,Wednesday,0,Corporate Lunch,1,Rainy,Packaged Food,Dinner,Monsoon,132,599,175
+869,766,Friday,0,College Fest,1,Cloudy,Buffet Items,Lunch,Monsoon,76,721,148
+774,659,Saturday,1,Wedding,1,Rainy,Bakery,Breakfast,Spring,117,675,99
+675,551,Thursday,0,Festival,1,Hot,Packaged Food,Breakfast,Spring,63,549,126
+334,240,Friday,0,None,0,Rainy,Cooked Meals,Breakfast,Summer,48,251,83
+991,966,Saturday,1,Festival,1,Cloudy,Cooked Meals,Breakfast,Monsoon,138,991,0
+606,488,Sunday,1,Corporate Lunch,1,Rainy,Dairy & Drinks,Dinner,Summer,71,453,153
+303,257,Tuesday,0,None,0,Sunny,Bakery,Dinner,Monsoon,51,242,61
+767,640,Friday,0,None,0,Sunny,Cooked Meals,Lunch,Spring,133,588,179
+472,421,Saturday,1,Festival,1,Hot,Dairy & Drinks,Lunch,Summer,75,431,41
+934,794,Thursday,0,Wedding,1,Sunny,Packaged Food,Breakfast,Summer,156,759,175
+974,712,Thursday,0,Wedding,1,Rainy,Cooked Meals,Dinner,Winter,108,718,256
+417,335,Wednesday,0,None,0,Rainy,Packaged Food,Dinner,Summer,44,324,93
+527,434,Saturday,1,College Fest,1,Rainy,Packaged Food,Dinner,Monsoon,82,431,96
+907,765,Thursday,0,Festival,1,Rainy,Cooked Meals,Dinner,Spring,103,743,164
+553,460,Friday,0,Corporate Lunch,1,Sunny,Bakery,Lunch,Winter,47,449,104
+817,758,Tuesday,0,Wedding,1,Sunny,Dairy & Drinks,Breakfast,Monsoon,70,792,25
+853,714,Sunday,1,Conference,1,Hot,Packaged Food,Breakfast,Spring,127,704,149
+433,424,Friday,0,Conference,1,Sunny,Buffet Items,Breakfast,Winter,51,409,24
+1056,964,Friday,0,Conference,1,Sunny,Cooked Meals,Breakfast,Summer,108,989,67
+533,482,Tuesday,0,College Fest,1,Hot,Dairy & Drinks,Breakfast,Summer,60,474,59
+950,825,Monday,0,Corporate Lunch,1,Cloudy,Dairy & Drinks,Dinner,Summer,108,785,165
+435,347,Sunday,1,College Fest,1,Hot,Dairy & Drinks,Breakfast,Monsoon,64,364,71
+582,489,Tuesday,0,Wedding,1,Hot,Buffet Items,Dinner,Winter,66,497,85
+905,753,Friday,0,Conference,1,Hot,Buffet Items,Lunch,Spring,89,783,122
+535,448,Saturday,1,Conference,1,Rainy,Bakery,Lunch,Spring,49,457,78
+838,779,Monday,0,Festival,1,Hot,Dairy & Drinks,Breakfast,Winter,142,816,22
+713,673,Sunday,1,Wedding,1,Hot,Bakery,Dinner,Summer,87,665,48
+618,583,Friday,0,None,0,Cloudy,Packaged Food,Dinner,Spring,77,589,29
+483,336,Saturday,1,None,0,Sunny,Bakery,Lunch,Winter,51,317,166
+737,657,Wednesday,0,College Fest,1,Cloudy,Buffet Items,Breakfast,Monsoon,88,635,102
+536,398,Thursday,0,Conference,1,Rainy,Dairy & Drinks,Dinner,Spring,50,385,151
+795,779,Saturday,1,Conference,1,Hot,Cooked Meals,Breakfast,Monsoon,120,769,26
+682,631,Sunday,1,College Fest,1,Cloudy,Buffet Items,Dinner,Winter,87,647,35
+518,385,Saturday,1,None,0,Hot,Buffet Items,Lunch,Summer,42,367,151
+631,475,Monday,0,Wedding,1,Rainy,Dairy & Drinks,Dinner,Spring,55,464,167
+842,777,Friday,0,Wedding,1,Hot,Bakery,Breakfast,Summer,74,806,36
+677,626,Wednesday,0,Conference,1,Cloudy,Buffet Items,Dinner,Summer,112,612,65
+305,294,Wednesday,0,Festival,1,Hot,Packaged Food,Breakfast,Spring,45,305,0
+554,472,Monday,0,Conference,1,Rainy,Packaged Food,Breakfast,Winter,86,458,96
+549,426,Monday,0,None,0,Cloudy,Dairy & Drinks,Breakfast,Winter,59,405,144
+454,335,Saturday,1,Conference,1,Rainy,Dairy & Drinks,Breakfast,Winter,75,328,126
+1007,907,Wednesday,0,Corporate Lunch,1,Hot,Bakery,Dinner,Spring,124,937,70
+454,384,Saturday,1,Festival,1,Cloudy,Buffet Items,Lunch,Spring,36,361,93
+995,949,Friday,0,Conference,1,Cloudy,Buffet Items,Lunch,Winter,158,967,28
+896,815,Friday,0,Conference,1,Sunny,Dairy & Drinks,Lunch,Spring,137,767,129
+951,735,Thursday,0,College Fest,1,Rainy,Buffet Items,Breakfast,Monsoon,101,742,209
+470,401,Saturday,1,Festival,1,Cloudy,Packaged Food,Breakfast,Winter,50,401,69
+548,436,Friday,0,College Fest,1,Rainy,Buffet Items,Breakfast,Spring,83,416,132
+655,363,Saturday,1,None,0,Rainy,Cooked Meals,Breakfast,Winter,76,357,298
+422,354,Saturday,1,None,0,Cloudy,Cooked Meals,Breakfast,Winter,41,347,75
+841,824,Sunday,1,Wedding,1,Hot,Cooked Meals,Breakfast,Spring,84,841,0
+480,250,Saturday,1,None,0,Rainy,Packaged Food,Lunch,Summer,44,247,233
+722,584,Thursday,0,Festival,1,Cloudy,Bakery,Lunch,Winter,69,561,161
+441,427,Wednesday,0,Corporate Lunch,1,Sunny,Packaged Food,Breakfast,Winter,51,425,16
+905,610,Monday,0,Conference,1,Rainy,Packaged Food,Breakfast,Summer,83,623,282
+447,393,Tuesday,0,Wedding,1,Cloudy,Packaged Food,Dinner,Spring,37,374,73
+589,479,Saturday,1,College Fest,1,Cloudy,Dairy & Drinks,Dinner,Monsoon,63,486,103
+785,674,Sunday,1,Corporate Lunch,1,Rainy,Cooked Meals,Dinner,Spring,102,688,97
+762,620,Saturday,1,Conference,1,Sunny,Dairy & Drinks,Lunch,Spring,75,636,126
+833,647,Saturday,1,College Fest,1,Rainy,Dairy & Drinks,Lunch,Summer,144,598,235
+251,146,Tuesday,0,None,0,Rainy,Cooked Meals,Lunch,Spring,32,141,110
+1053,857,Friday,0,Festival,1,Cloudy,Cooked Meals,Lunch,Spring,135,811,242
+527,445,Sunday,1,None,0,Hot,Cooked Meals,Lunch,Monsoon,70,445,82
+253,203,Saturday,1,None,0,Cloudy,Cooked Meals,Breakfast,Winter,33,191,62
+554,458,Tuesday,0,Corporate Lunch,1,Rainy,Dairy & Drinks,Dinner,Monsoon,93,460,94
+949,833,Tuesday,0,Conference,1,Hot,Dairy & Drinks,Lunch,Spring,170,800,149
+934,841,Wednesday,0,Wedding,1,Hot,Packaged Food,Dinner,Summer,161,857,77
+357,330,Wednesday,0,Wedding,1,Hot,Packaged Food,Lunch,Winter,39,346,11
+946,711,Wednesday,0,Conference,1,Rainy,Buffet Items,Breakfast,Summer,109,657,289
+719,613,Tuesday,0,Wedding,1,Cloudy,Dairy & Drinks,Breakfast,Spring,73,609,110
+1049,1028,Monday,0,Festival,1,Cloudy,Packaged Food,Breakfast,Monsoon,160,985,64
+800,784,Friday,0,College Fest,1,Sunny,Cooked Meals,Lunch,Summer,123,799,1
+796,683,Sunday,1,Corporate Lunch,1,Sunny,Packaged Food,Breakfast,Summer,119,657,139
+377,304,Tuesday,0,None,0,Hot,Packaged Food,Dinner,Winter,35,310,67
+711,568,Wednesday,0,None,0,Hot,Dairy & Drinks,Dinner,Winter,92,528,183
+850,722,Sunday,1,Festival,1,Rainy,Bakery,Lunch,Spring,88,733,117
+536,467,Monday,0,Wedding,1,Hot,Buffet Items,Dinner,Winter,61,441,95
+788,539,Saturday,1,None,0,Cloudy,Bakery,Lunch,Monsoon,78,553,235
+740,675,Wednesday,0,Conference,1,Sunny,Cooked Meals,Dinner,Winter,80,694,46
+357,296,Wednesday,0,Festival,1,Sunny,Buffet Items,Lunch,Monsoon,47,280,77
+364,338,Wednesday,0,Corporate Lunch,1,Hot,Dairy & Drinks,Dinner,Spring,35,312,52
+417,395,Wednesday,0,Conference,1,Cloudy,Cooked Meals,Lunch,Winter,48,410,7
+670,632,Monday,0,None,0,Cloudy,Packaged Food,Breakfast,Monsoon,74,589,81
+1061,986,Sunday,1,Corporate Lunch,1,Sunny,Bakery,Breakfast,Monsoon,117,1025,36
+773,560,Thursday,0,College Fest,1,Rainy,Cooked Meals,Lunch,Summer,66,535,238
+492,482,Wednesday,0,College Fest,1,Sunny,Dairy & Drinks,Lunch,Spring,58,448,44
+934,680,Saturday,1,Corporate Lunch,1,Rainy,Packaged Food,Breakfast,Spring,135,637,297
+922,876,Friday,0,Corporate Lunch,1,Rainy,Bakery,Lunch,Spring,103,910,12
+475,417,Friday,0,Corporate Lunch,1,Sunny,Bakery,Lunch,Spring,52,435,40
+431,347,Saturday,1,Festival,1,Cloudy,Bakery,Breakfast,Winter,60,347,84
+637,531,Friday,0,Conference,1,Rainy,Bakery,Dinner,Winter,96,530,107
+466,385,Wednesday,0,Conference,1,Hot,Packaged Food,Lunch,Spring,80,402,64
+920,753,Thursday,0,Conference,1,Rainy,Bakery,Breakfast,Spring,112,779,141
+683,447,Sunday,1,None,0,Hot,Buffet Items,Lunch,Winter,114,462,221
+973,885,Tuesday,0,Corporate Lunch,1,Hot,Cooked Meals,Dinner,Monsoon,116,847,126
+1112,877,Wednesday,0,Wedding,1,Hot,Bakery,Lunch,Summer,181,823,289
+552,443,Thursday,0,None,0,Sunny,Bakery,Dinner,Spring,54,433,119
+758,599,Friday,0,Festival,1,Rainy,Packaged Food,Breakfast,Summer,67,608,150
+929,910,Saturday,1,College Fest,1,Cloudy,Cooked Meals,Dinner,Monsoon,145,882,47
+409,304,Wednesday,0,Corporate Lunch,1,Rainy,Bakery,Breakfast,Spring,40,291,118
+846,829,Tuesday,0,Conference,1,Sunny,Dairy & Drinks,Lunch,Winter,142,763,83
+484,441,Tuesday,0,Conference,1,Hot,Packaged Food,Lunch,Monsoon,68,437,47
+616,485,Friday,0,Conference,1,Sunny,Bakery,Breakfast,Winter,86,482,134
+315,273,Wednesday,0,None,0,Sunny,Cooked Meals,Lunch,Spring,46,272,43
+309,273,Friday,0,Corporate Lunch,1,Rainy,Packaged Food,Dinner,Summer,48,280,29
+551,539,Sunday,1,Corporate Lunch,1,Sunny,Buffet Items,Lunch,Spring,55,524,27
+930,901,Tuesday,0,Corporate Lunch,1,Sunny,Cooked Meals,Dinner,Winter,101,930,0
+539,494,Friday,0,Wedding,1,Cloudy,Dairy & Drinks,Dinner,Summer,69,495,44
+377,289,Tuesday,0,Corporate Lunch,1,Rainy,Buffet Items,Breakfast,Winter,53,273,104
+424,345,Thursday,0,College Fest,1,Sunny,Buffet Items,Lunch,Spring,46,352,72
+700,673,Friday,0,Corporate Lunch,1,Cloudy,Cooked Meals,Breakfast,Summer,68,621,79
+782,743,Wednesday,0,Wedding,1,Hot,Packaged Food,Breakfast,Spring,88,735,47
+955,748,Sunday,1,College Fest,1,Sunny,Dairy & Drinks,Lunch,Summer,163,720,235
+693,657,Sunday,1,Wedding,1,Sunny,Bakery,Lunch,Winter,82,653,40
+428,343,Friday,0,None,0,Cloudy,Buffet Items,Dinner,Winter,44,337,91
+459,393,Thursday,0,Wedding,1,Rainy,Dairy & Drinks,Lunch,Spring,37,384,75
+865,776,Thursday,0,Corporate Lunch,1,Rainy,Bakery,Lunch,Monsoon,150,796,69
+813,520,Saturday,1,Conference,1,Rainy,Cooked Meals,Lunch,Monsoon,72,518,295
+173,146,Thursday,0,None,0,Sunny,Dairy & Drinks,Dinner,Summer,29,140,33
+872,612,Wednesday,0,Conference,1,Rainy,Buffet Items,Lunch,Summer,124,564,308
+427,258,Friday,0,None,0,Rainy,Dairy & Drinks,Lunch,Summer,44,246,181
+390,351,Monday,0,Wedding,1,Cloudy,Dairy & Drinks,Lunch,Winter,33,327,63
+972,706,Thursday,0,College Fest,1,Rainy,Dairy & Drinks,Dinner,Monsoon,129,711,261
+465,344,Sunday,1,College Fest,1,Rainy,Cooked Meals,Dinner,Monsoon,81,337,128
+789,773,Tuesday,0,Corporate Lunch,1,Cloudy,Buffet Items,Lunch,Spring,68,760,29
+760,698,Monday,0,Wedding,1,Hot,Packaged Food,Breakfast,Summer,115,678,82
+811,717,Monday,0,Wedding,1,Sunny,Buffet Items,Dinner,Monsoon,143,710,101
+595,500,Thursday,0,None,0,Cloudy,Bakery,Dinner,Monsoon,88,482,113
+1008,900,Tuesday,0,Festival,1,Sunny,Dairy & Drinks,Lunch,Winter,98,924,84
+656,564,Thursday,0,None,0,Sunny,Dairy & Drinks,Lunch,Summer,66,523,133
+849,724,Tuesday,0,Corporate Lunch,1,Sunny,Bakery,Dinner,Spring,85,708,141
+490,392,Wednesday,0,Wedding,1,Cloudy,Packaged Food,Dinner,Summer,45,381,109
+723,654,Wednesday,0,None,0,Cloudy,Dairy & Drinks,Breakfast,Winter,120,632,91
+790,476,Sunday,1,None,0,Rainy,Packaged Food,Dinner,Monsoon,115,471,319
+716,492,Thursday,0,Conference,1,Rainy,Dairy & Drinks,Lunch,Summer,103,453,263
+554,542,Tuesday,0,Festival,1,Hot,Packaged Food,Breakfast,Winter,82,554,0
+1024,785,Thursday,0,Corporate Lunch,1,Rainy,Packaged Food,Dinner,Monsoon,141,783,241
+956,689,Sunday,1,Festival,1,Rainy,Dairy & Drinks,Lunch,Monsoon,87,697,259
+858,698,Thursday,0,Festival,1,Sunny,Bakery,Dinner,Summer,109,650,208
+890,872,Saturday,1,Festival,1,Sunny,Dairy & Drinks,Dinner,Summer,111,803,87
+588,473,Thursday,0,Corporate Lunch,1,Cloudy,Packaged Food,Lunch,Summer,89,481,107
+849,788,Friday,0,Wedding,1,Sunny,Packaged Food,Dinner,Spring,70,800,49
+408,258,Thursday,0,None,0,Rainy,Dairy & Drinks,Breakfast,Summer,33,266,142
+801,711,Monday,0,Corporate Lunch,1,Rainy,Dairy & Drinks,Dinner,Spring,128,698,103
+657,537,Sunday,1,None,0,Cloudy,Cooked Meals,Breakfast,Spring,95,520,137
+469,319,Saturday,1,Festival,1,Rainy,Bakery,Dinner,Summer,59,312,157
+802,518,Thursday,0,Festival,1,Rainy,Packaged Food,Dinner,Monsoon,100,538,264
+848,831,Saturday,1,Wedding,1,Sunny,Cooked Meals,Dinner,Summer,90,800,48
+1049,855,Monday,0,Wedding,1,Hot,Packaged Food,Dinner,Spring,102,863,186
+250,207,Friday,0,None,0,Sunny,Cooked Meals,Breakfast,Monsoon,28,208,42
+907,720,Saturday,1,Wedding,1,Cloudy,Bakery,Breakfast,Winter,92,746,161
+802,780,Friday,0,Festival,1,Sunny,Cooked Meals,Breakfast,Spring,78,799,3
+490,368,Monday,0,Festival,1,Rainy,Buffet Items,Lunch,Monsoon,71,371,119
+410,367,Sunday,1,Wedding,1,Cloudy,Bakery,Breakfast,Summer,66,349,61
+597,525,Tuesday,0,College Fest,1,Sunny,Packaged Food,Breakfast,Monsoon,60,535,62
+224,141,Saturday,1,None,0,Hot,Buffet Items,Breakfast,Winter,18,143,81
+560,543,Thursday,0,Conference,1,Sunny,Cooked Meals,Dinner,Monsoon,73,540,20
+860,686,Sunday,1,College Fest,1,Hot,Packaged Food,Lunch,Winter,110,704,156
+674,644,Friday,0,Corporate Lunch,1,Cloudy,Buffet Items,Dinner,Summer,89,600,74
+330,276,Wednesday,0,None,0,Hot,Buffet Items,Dinner,Spring,48,288,42
+769,753,Wednesday,0,Festival,1,Hot,Cooked Meals,Dinner,Summer,64,711,58
+967,726,Monday,0,Festival,1,Rainy,Packaged Food,Lunch,Winter,173,710,257
+695,580,Monday,0,Wedding,1,Sunny,Buffet Items,Dinner,Winter,120,573,122
+475,324,Sunday,1,Corporate Lunch,1,Rainy,Dairy & Drinks,Breakfast,Winter,40,336,139
+774,654,Saturday,1,Festival,1,Rainy,Cooked Meals,Breakfast,Winter,125,651,123
+214,192,Monday,0,None,0,Hot,Dairy & Drinks,Dinner,Spring,34,187,27
+793,777,Saturday,1,Festival,1,Hot,Buffet Items,Breakfast,Spring,77,719,74
+528,442,Monday,0,None,0,Cloudy,Bakery,Lunch,Spring,91,431,97
+491,428,Monday,0,Conference,1,Sunny,Dairy & Drinks,Lunch,Spring,43,403,88
+431,344,Saturday,1,Corporate Lunch,1,Cloudy,Packaged Food,Dinner,Monsoon,44,336,95
+1119,910,Tuesday,0,Corporate Lunch,1,Sunny,Dairy & Drinks,Breakfast,Monsoon,136,872,247
+975,820,Friday,0,Conference,1,Rainy,Cooked Meals,Dinner,Winter,139,803,172
+862,713,Tuesday,0,Wedding,1,Sunny,Bakery,Breakfast,Spring,124,659,203
+320,313,Wednesday,0,Conference,1,Hot,Buffet Items,Lunch,Monsoon,50,295,25
+1004,844,Thursday,0,Corporate Lunch,1,Sunny,Cooked Meals,Breakfast,Monsoon,113,850,154
+572,485,Sunday,1,None,0,Cloudy,Bakery,Breakfast,Spring,72,460,112
+332,264,Thursday,0,None,0,Hot,Bakery,Breakfast,Monsoon,50,247,85
+459,415,Saturday,1,Wedding,1,Cloudy,Bakery,Lunch,Spring,58,387,72
+1107,930,Thursday,0,Conference,1,Cloudy,Bakery,Lunch,Spring,98,958,149
+794,615,Sunday,1,Corporate Lunch,1,Hot,Bakery,Dinner,Monsoon,83,635,159
+927,601,Thursday,0,Corporate Lunch,1,Rainy,Dairy & Drinks,Breakfast,Winter,113,592,335
+477,464,Thursday,0,College Fest,1,Sunny,Packaged Food,Lunch,Spring,48,451,26
+603,496,Wednesday,0,Wedding,1,Rainy,Cooked Meals,Breakfast,Monsoon,75,457,146
+898,869,Sunday,1,Conference,1,Hot,Bakery,Lunch,Monsoon,101,898,0
+490,480,Monday,0,Wedding,1,Hot,Buffet Items,Dinner,Spring,85,445,45
+884,688,Saturday,1,Wedding,1,Sunny,Cooked Meals,Lunch,Summer,133,690,194
+831,679,Friday,0,Festival,1,Rainy,Bakery,Lunch,Spring,124,701,130
+939,742,Sunday,1,Festival,1,Rainy,Buffet Items,Lunch,Summer,122,726,213
+612,468,Sunday,1,None,0,Hot,Dairy & Drinks,Dinner,Summer,98,488,124
+506,495,Monday,0,Conference,1,Hot,Cooked Meals,Breakfast,Monsoon,46,466,40
+656,577,Tuesday,0,College Fest,1,Rainy,Bakery,Dinner,Winter,81,556,100
+387,322,Saturday,1,None,0,Cloudy,Bakery,Breakfast,Winter,53,310,77
+795,744,Saturday,1,Festival,1,Cloudy,Packaged Food,Dinner,Monsoon,126,714,81
+683,595,Tuesday,0,College Fest,1,Cloudy,Buffet Items,Breakfast,Spring,103,618,65
+379,341,Wednesday,0,Conference,1,Rainy,Bakery,Breakfast,Spring,38,330,49
+609,473,Saturday,1,None,0,Cloudy,Buffet Items,Breakfast,Summer,104,453,156
+502,403,Thursday,0,College Fest,1,Rainy,Packaged Food,Lunch,Spring,63,407,95
+772,514,Wednesday,0,Corporate Lunch,1,Rainy,Dairy & Drinks,Dinner,Monsoon,70,518,254
+598,499,Monday,0,College Fest,1,Rainy,Packaged Food,Lunch,Winter,93,509,89
+674,538,Tuesday,0,None,0,Sunny,Dairy & Drinks,Lunch,Winter,94,529,145
+528,420,Friday,0,None,0,Cloudy,Packaged Food,Breakfast,Monsoon,60,387,141
+880,764,Wednesday,0,College Fest,1,Sunny,Bakery,Dinner,Monsoon,149,775,105
+450,316,Saturday,1,College Fest,1,Rainy,Dairy & Drinks,Dinner,Winter,77,304,146
+718,663,Friday,0,College Fest,1,Sunny,Cooked Meals,Lunch,Summer,67,675,43
+772,711,Tuesday,0,College Fest,1,Cloudy,Dairy & Drinks,Lunch,Winter,79,722,50
+277,180,Sunday,1,None,0,Rainy,Buffet Items,Lunch,Monsoon,41,177,100
+763,676,Tuesday,0,None,0,Sunny,Buffet Items,Lunch,Winter,104,672,91
+556,501,Sunday,1,Wedding,1,Hot,Cooked Meals,Lunch,Winter,83,490,66
+626,531,Wednesday,0,Conference,1,Sunny,Buffet Items,Lunch,Monsoon,82,553,73
+888,767,Sunday,1,Festival,1,Rainy,Cooked Meals,Dinner,Spring,131,735,153
+400,319,Saturday,1,Wedding,1,Sunny,Dairy & Drinks,Dinner,Summer,48,325,75
+342,266,Tuesday,0,None,0,Rainy,Bakery,Dinner,Spring,59,268,74
+578,452,Sunday,1,Corporate Lunch,1,Sunny,Packaged Food,Lunch,Winter,86,436,142
+469,452,Tuesday,0,College Fest,1,Cloudy,Bakery,Dinner,Summer,44,466,3
+861,735,Tuesday,0,Wedding,1,Rainy,Bakery,Breakfast,Winter,106,722,139
+630,459,Tuesday,0,None,0,Sunny,Dairy & Drinks,Dinner,Winter,54,437,193
+751,650,Saturday,1,None,0,Sunny,Cooked Meals,Dinner,Spring,66,627,124
+632,576,Sunday,1,Festival,1,Cloudy,Dairy & Drinks,Lunch,Summer,86,548,84
+581,569,Monday,0,Corporate Lunch,1,Sunny,Dairy & Drinks,Breakfast,Spring,52,581,0
+872,854,Tuesday,0,Corporate Lunch,1,Hot,Buffet Items,Dinner,Spring,102,825,47
+495,359,Tuesday,0,Corporate Lunch,1,Rainy,Packaged Food,Breakfast,Summer,67,363,132
+440,358,Monday,0,None,0,Cloudy,Packaged Food,Breakfast,Monsoon,65,363,77
+736,634,Sunday,1,College Fest,1,Rainy,Dairy & Drinks,Lunch,Summer,85,660,76
+953,881,Monday,0,Festival,1,Hot,Cooked Meals,Lunch,Monsoon,142,855,98
+647,488,Monday,0,Festival,1,Rainy,Cooked Meals,Lunch,Spring,98,502,145
+1110,971,Wednesday,0,Festival,1,Cloudy,Packaged Food,Lunch,Monsoon,174,928,182
+793,741,Monday,0,None,0,Cloudy,Packaged Food,Lunch,Spring,121,684,109
+769,624,Sunday,1,None,0,Hot,Cooked Meals,Breakfast,Monsoon,68,624,145
+884,798,Monday,0,Festival,1,Hot,Packaged Food,Breakfast,Summer,118,818,66
+472,431,Monday,0,None,0,Hot,Cooked Meals,Lunch,Monsoon,39,421,51
+466,444,Tuesday,0,Corporate Lunch,1,Cloudy,Bakery,Lunch,Monsoon,68,414,52
+782,682,Saturday,1,Corporate Lunch,1,Hot,Packaged Food,Dinner,Spring,110,713,69
+595,524,Wednesday,0,Wedding,1,Cloudy,Cooked Meals,Breakfast,Winter,93,521,74
+720,627,Saturday,1,Wedding,1,Hot,Cooked Meals,Lunch,Summer,104,597,123
+323,227,Friday,0,None,0,Sunny,Buffet Items,Breakfast,Summer,40,218,105
+857,839,Sunday,1,College Fest,1,Hot,Buffet Items,Breakfast,Monsoon,117,814,43
+971,930,Sunday,1,College Fest,1,Sunny,Bakery,Lunch,Monsoon,112,929,42
+611,495,Thursday,0,Conference,1,Hot,Cooked Meals,Dinner,Spring,62,481,130
+218,166,Saturday,1,None,0,Sunny,Dairy & Drinks,Lunch,Summer,25,161,57
+882,723,Monday,0,Festival,1,Cloudy,Dairy & Drinks,Lunch,Monsoon,110,723,159
+967,670,Sunday,1,Corporate Lunch,1,Rainy,Cooked Meals,Dinner,Spring,167,657,310
+835,708,Friday,0,Corporate Lunch,1,Hot,Dairy & Drinks,Dinner,Winter,124,665,170
+740,725,Wednesday,0,College Fest,1,Hot,Buffet Items,Breakfast,Spring,103,691,49
+705,690,Thursday,0,Conference,1,Sunny,Bakery,Breakfast,Winter,87,685,20
+179,97,Saturday,1,None,0,Rainy,Bakery,Lunch,Spring,29,91,88
+942,923,Saturday,1,College Fest,1,Sunny,Cooked Meals,Breakfast,Summer,109,897,45
+734,577,Saturday,1,None,0,Hot,Bakery,Breakfast,Winter,119,569,165
+895,858,Sunday,1,Corporate Lunch,1,Cloudy,Packaged Food,Breakfast,Spring,137,882,13
+403,292,Sunday,1,Festival,1,Rainy,Packaged Food,Breakfast,Spring,34,301,102
+910,751,Friday,0,Wedding,1,Sunny,Buffet Items,Dinner,Monsoon,85,767,143
+481,471,Thursday,0,Festival,1,Cloudy,Buffet Items,Breakfast,Winter,56,448,33
+802,641,Saturday,1,Festival,1,Cloudy,Cooked Meals,Dinner,Spring,137,667,135
+599,429,Wednesday,0,None,0,Rainy,Buffet Items,Breakfast,Spring,72,437,162
+773,696,Monday,0,Wedding,1,Sunny,Packaged Food,Lunch,Monsoon,74,649,124
+891,676,Wednesday,0,Corporate Lunch,1,Sunny,Buffet Items,Lunch,Summer,127,678,213
+971,728,Sunday,1,Festival,1,Rainy,Cooked Meals,Lunch,Spring,171,718,253
+692,519,Sunday,1,Festival,1,Rainy,Dairy & Drinks,Dinner,Monsoon,112,523,169
+536,464,Sunday,1,Wedding,1,Rainy,Cooked Meals,Lunch,Summer,93,440,96
+697,634,Friday,0,Festival,1,Rainy,Cooked Meals,Lunch,Spring,66,632,65
+925,855,Wednesday,0,Conference,1,Sunny,Cooked Meals,Dinner,Monsoon,91,865,60
+910,739,Sunday,1,Wedding,1,Cloudy,Packaged Food,Lunch,Spring,138,759,151
+796,587,Tuesday,0,College Fest,1,Rainy,Packaged Food,Breakfast,Winter,118,568,228
+557,485,Thursday,0,None,0,Sunny,Packaged Food,Breakfast,Summer,84,491,66
+388,380,Saturday,1,Corporate Lunch,1,Cloudy,Cooked Meals,Breakfast,Winter,54,367,21
+809,701,Saturday,1,Corporate Lunch,1,Sunny,Cooked Meals,Lunch,Monsoon,109,733,76
+821,715,Friday,0,Conference,1,Cloudy,Bakery,Dinner,Monsoon,101,723,98
+437,387,Wednesday,0,None,0,Cloudy,Cooked Meals,Breakfast,Monsoon,47,402,35
+498,477,Wednesday,0,Corporate Lunch,1,Cloudy,Dairy & Drinks,Lunch,Monsoon,67,497,1
+363,297,Saturday,1,Festival,1,Hot,Cooked Meals,Breakfast,Spring,45,279,84
+844,687,Monday,0,College Fest,1,Sunny,Packaged Food,Lunch,Monsoon,97,645,199
+1054,917,Tuesday,0,Wedding,1,Rainy,Bakery,Dinner,Summer,165,844,210
+592,515,Tuesday,0,College Fest,1,Sunny,Bakery,Lunch,Winter,69,481,111
+857,720,Monday,0,Wedding,1,Rainy,Cooked Meals,Breakfast,Monsoon,72,693,164
+504,467,Friday,0,College Fest,1,Cloudy,Dairy & Drinks,Breakfast,Spring,43,433,71
+742,714,Friday,0,College Fest,1,Sunny,Packaged Food,Lunch,Spring,74,658,84
+957,859,Thursday,0,College Fest,1,Cloudy,Bakery,Breakfast,Summer,142,824,133
+865,847,Tuesday,0,Wedding,1,Sunny,Buffet Items,Dinner,Spring,105,841,24
+1004,802,Sunday,1,College Fest,1,Cloudy,Dairy & Drinks,Breakfast,Monsoon,148,839,165
+666,492,Saturday,1,Festival,1,Rainy,Packaged Food,Dinner,Winter,61,462,204
+833,816,Wednesday,0,Conference,1,Hot,Buffet Items,Dinner,Winter,101,804,29
+769,624,Thursday,0,Festival,1,Cloudy,Buffet Items,Lunch,Winter,75,588,181
+471,398,Thursday,0,None,0,Sunny,Packaged Food,Dinner,Summer,69,389,82
+521,510,Friday,0,Wedding,1,Cloudy,Bakery,Breakfast,Spring,64,513,8
+638,519,Monday,0,None,0,Hot,Cooked Meals,Breakfast,Spring,93,504,134
+859,714,Saturday,1,Corporate Lunch,1,Hot,Buffet Items,Dinner,Summer,78,658,201
+564,402,Monday,0,Festival,1,Rainy,Cooked Meals,Breakfast,Monsoon,49,397,167
+411,355,Sunday,1,College Fest,1,Rainy,Packaged Food,Lunch,Winter,33,348,63
+387,256,Thursday,0,Corporate Lunch,1,Rainy,Bakery,Lunch,Monsoon,63,268,119
+878,815,Saturday,1,Corporate Lunch,1,Cloudy,Cooked Meals,Lunch,Monsoon,141,821,57
+920,829,Thursday,0,Conference,1,Sunny,Dairy & Drinks,Breakfast,Monsoon,155,832,88
+312,259,Monday,0,College Fest,1,Cloudy,Packaged Food,Dinner,Monsoon,32,249,63
+610,523,Tuesday,0,Corporate Lunch,1,Cloudy,Dairy & Drinks,Dinner,Monsoon,99,546,64
+715,694,Saturday,1,Festival,1,Cloudy,Packaged Food,Breakfast,Spring,71,650,65
+543,509,Friday,0,College Fest,1,Sunny,Packaged Food,Lunch,Summer,57,492,51
+705,501,Saturday,1,Conference,1,Rainy,Dairy & Drinks,Breakfast,Winter,126,492,213
+931,886,Sunday,1,Wedding,1,Sunny,Dairy & Drinks,Lunch,Spring,115,921,10
+725,515,Thursday,0,None,0,Sunny,Dairy & Drinks,Dinner,Winter,103,480,245
+897,819,Sunday,1,Conference,1,Cloudy,Bakery,Dinner,Summer,129,764,133
+318,311,Wednesday,0,Conference,1,Sunny,Bakery,Lunch,Monsoon,30,297,21
+597,572,Wednesday,0,Wedding,1,Hot,Buffet Items,Dinner,Spring,95,543,54
+393,309,Thursday,0,College Fest,1,Hot,Dairy & Drinks,Dinner,Summer,68,316,77
+412,400,Monday,0,Wedding,1,Cloudy,Packaged Food,Breakfast,Monsoon,70,401,11
+803,704,Monday,0,Festival,1,Cloudy,Packaged Food,Lunch,Summer,113,730,73
+966,946,Tuesday,0,Festival,1,Hot,Packaged Food,Dinner,Spring,163,956,10
+424,368,Sunday,1,Festival,1,Hot,Bakery,Lunch,Winter,39,373,51
+870,739,Friday,0,Wedding,1,Rainy,Cooked Meals,Dinner,Summer,121,756,114
+697,644,Tuesday,0,Wedding,1,Hot,Dairy & Drinks,Breakfast,Winter,101,596,101
+800,784,Monday,0,College Fest,1,Cloudy,Dairy & Drinks,Dinner,Winter,109,800,0
+1008,721,Saturday,1,Festival,1,Rainy,Buffet Items,Lunch,Summer,132,673,335
+691,548,Tuesday,0,Wedding,1,Hot,Cooked Meals,Breakfast,Monsoon,70,513,178
+669,599,Monday,0,Wedding,1,Hot,Dairy & Drinks,Dinner,Monsoon,115,585,84
+928,847,Thursday,0,Festival,1,Hot,Bakery,Breakfast,Spring,123,835,93
+916,897,Saturday,1,Conference,1,Hot,Packaged Food,Breakfast,Spring,83,916,0
+465,392,Wednesday,0,Corporate Lunch,1,Cloudy,Cooked Meals,Dinner,Spring,38,375,90
+516,505,Tuesday,0,Conference,1,Hot,Cooked Meals,Lunch,Summer,59,472,44
+729,543,Sunday,1,None,0,Hot,Packaged Food,Dinner,Summer,119,526,203
+880,649,Sunday,1,Corporate Lunch,1,Rainy,Bakery,Dinner,Monsoon,128,664,216
+891,660,Thursday,0,College Fest,1,Rainy,Packaged Food,Lunch,Winter,127,609,282
+843,698,Sunday,1,Festival,1,Cloudy,Dairy & Drinks,Dinner,Winter,71,694,149
+541,482,Friday,0,Corporate Lunch,1,Rainy,Packaged Food,Dinner,Winter,56,492,49
+811,652,Saturday,1,Corporate Lunch,1,Hot,Cooked Meals,Dinner,Summer,100,601,210
+267,252,Thursday,0,None,0,Cloudy,Packaged Food,Lunch,Winter,28,249,18
+438,402,Tuesday,0,Wedding,1,Sunny,Bakery,Lunch,Monsoon,37,371,67
+414,328,Thursday,0,None,0,Cloudy,Bakery,Lunch,Summer,38,337,77
+435,292,Tuesday,0,Conference,1,Rainy,Packaged Food,Dinner,Monsoon,52,287,148
+402,358,Tuesday,0,None,0,Cloudy,Dairy & Drinks,Dinner,Winter,37,359,43
+490,437,Friday,0,College Fest,1,Hot,Cooked Meals,Dinner,Spring,85,415,75
+421,341,Friday,0,College Fest,1,Sunny,Cooked Meals,Lunch,Summer,44,325,96
+337,324,Saturday,1,College Fest,1,Cloudy,Bakery,Dinner,Summer,40,310,27
+762,649,Monday,0,Conference,1,Cloudy,Packaged Food,Breakfast,Summer,79,635,127
+499,398,Wednesday,0,Wedding,1,Rainy,Packaged Food,Dinner,Summer,84,390,109
+789,642,Saturday,1,Conference,1,Hot,Dairy & Drinks,Dinner,Monsoon,105,644,145
+956,849,Sunday,1,Festival,1,Hot,Cooked Meals,Lunch,Monsoon,170,870,86
+666,512,Monday,0,College Fest,1,Cloudy,Bakery,Lunch,Winter,77,532,134
+630,545,Monday,0,Corporate Lunch,1,Cloudy,Bakery,Breakfast,Monsoon,63,551,79
+565,471,Tuesday,0,Festival,1,Hot,Cooked Meals,Lunch,Monsoon,79,474,91
+733,566,Tuesday,0,None,0,Rainy,Cooked Meals,Breakfast,Summer,78,574,159
+1049,954,Sunday,1,Festival,1,Sunny,Dairy & Drinks,Dinner,Summer,182,957,92
+899,808,Monday,0,Wedding,1,Hot,Packaged Food,Lunch,Winter,136,747,152
+355,284,Monday,0,Wedding,1,Hot,Dairy & Drinks,Lunch,Summer,29,282,73
+502,431,Saturday,1,Conference,1,Hot,Cooked Meals,Breakfast,Spring,64,401,101
+634,439,Sunday,1,None,0,Cloudy,Buffet Items,Breakfast,Winter,71,406,228
+507,440,Sunday,1,Conference,1,Sunny,Dairy & Drinks,Dinner,Monsoon,87,460,47
+383,353,Thursday,0,Wedding,1,Sunny,Bakery,Breakfast,Monsoon,32,329,54
+709,661,Monday,0,Wedding,1,Hot,Packaged Food,Breakfast,Monsoon,83,609,100
+846,712,Sunday,1,College Fest,1,Sunny,Buffet Items,Dinner,Winter,118,664,182
+720,544,Monday,0,Corporate Lunch,1,Rainy,Dairy & Drinks,Breakfast,Summer,60,510,210
+717,702,Tuesday,0,Wedding,1,Hot,Dairy & Drinks,Dinner,Summer,79,659,58
+368,338,Wednesday,0,Wedding,1,Cloudy,Cooked Meals,Dinner,Spring,44,348,20
+914,772,Tuesday,0,Conference,1,Rainy,Cooked Meals,Lunch,Spring,124,795,119
+473,463,Wednesday,0,Corporate Lunch,1,Cloudy,Packaged Food,Lunch,Spring,81,455,18
+617,495,Saturday,1,Conference,1,Rainy,Packaged Food,Dinner,Spring,62,503,114
+180,150,Tuesday,0,None,0,Cloudy,Cooked Meals,Breakfast,Summer,22,140,40
+524,439,Saturday,1,Corporate Lunch,1,Cloudy,Cooked Meals,Breakfast,Spring,59,444,80
+751,483,Friday,0,Conference,1,Rainy,Bakery,Breakfast,Spring,126,485,266
+800,655,Wednesday,0,Conference,1,Cloudy,Packaged Food,Breakfast,Summer,113,670,130
+493,452,Thursday,0,Festival,1,Sunny,Cooked Meals,Breakfast,Spring,60,434,59
+873,841,Saturday,1,Conference,1,Sunny,Dairy & Drinks,Dinner,Spring,139,779,94
+933,857,Sunday,1,Conference,1,Hot,Bakery,Dinner,Winter,144,845,88
+515,491,Saturday,1,Corporate Lunch,1,Cloudy,Packaged Food,Dinner,Monsoon,90,482,33
+518,507,Thursday,0,Wedding,1,Hot,Dairy & Drinks,Dinner,Winter,52,481,37
+579,392,Thursday,0,College Fest,1,Rainy,Buffet Items,Lunch,Winter,73,390,189
+762,736,Friday,0,Wedding,1,Hot,Packaged Food,Lunch,Monsoon,74,713,49
+894,796,Tuesday,0,Wedding,1,Sunny,Buffet Items,Breakfast,Summer,91,760,134
+491,367,Monday,0,None,0,Cloudy,Cooked Meals,Dinner,Spring,54,353,138
+1039,887,Sunday,1,Festival,1,Cloudy,Bakery,Dinner,Spring,119,848,191
+715,603,Thursday,0,College Fest,1,Sunny,Packaged Food,Dinner,Spring,94,591,124
+786,656,Sunday,1,Corporate Lunch,1,Hot,Packaged Food,Lunch,Winter,79,663,123
+803,770,Thursday,0,Corporate Lunch,1,Sunny,Buffet Items,Breakfast,Spring,92,774,29
+733,582,Tuesday,0,College Fest,1,Hot,Packaged Food,Dinner,Summer,69,605,128
+451,392,Wednesday,0,Corporate Lunch,1,Hot,Packaged Food,Breakfast,Monsoon,79,377,74
+493,466,Saturday,1,Wedding,1,Sunny,Bakery,Breakfast,Spring,42,440,53
+729,566,Thursday,0,Wedding,1,Rainy,Bakery,Lunch,Winter,86,587,142
+892,874,Monday,0,Conference,1,Hot,Packaged Food,Dinner,Winter,98,892,0
+902,820,Sunday,1,Festival,1,Hot,Bakery,Dinner,Summer,72,783,119
+872,854,Tuesday,0,College Fest,1,Sunny,Packaged Food,Dinner,Spring,119,836,36
+550,419,Saturday,1,None,0,Cloudy,Packaged Food,Lunch,Summer,57,395,155
+856,766,Friday,0,Festival,1,Hot,Packaged Food,Lunch,Spring,142,728,128
+860,842,Wednesday,0,Festival,1,Cloudy,Cooked Meals,Dinner,Spring,75,860,0
+561,504,Monday,0,Corporate Lunch,1,Cloudy,Packaged Food,Lunch,Spring,83,468,93
+550,424,Saturday,1,College Fest,1,Hot,Buffet Items,Dinner,Monsoon,51,429,121
+474,450,Saturday,1,Festival,1,Hot,Packaged Food,Lunch,Winter,60,439,35
+506,332,Wednesday,0,Conference,1,Rainy,Cooked Meals,Dinner,Winter,41,334,172
+513,476,Wednesday,0,Conference,1,Hot,Buffet Items,Breakfast,Spring,83,481,32
+717,646,Sunday,1,Corporate Lunch,1,Sunny,Packaged Food,Dinner,Summer,71,626,91
+688,621,Tuesday,0,Wedding,1,Rainy,Bakery,Breakfast,Winter,70,625,63
+801,707,Monday,0,Festival,1,Rainy,Bakery,Breakfast,Monsoon,138,707,94
+697,567,Thursday,0,College Fest,1,Sunny,Bakery,Breakfast,Winter,82,544,153
+311,304,Thursday,0,Conference,1,Sunny,Buffet Items,Dinner,Summer,40,310,1
+1074,795,Monday,0,Festival,1,Rainy,Buffet Items,Breakfast,Summer,104,745,329
+423,414,Sunday,1,Festival,1,Cloudy,Packaged Food,Breakfast,Summer,65,408,15
+626,608,Friday,0,Corporate Lunch,1,Sunny,Bakery,Breakfast,Winter,53,608,18
+623,501,Wednesday,0,College Fest,1,Cloudy,Bakery,Breakfast,Monsoon,108,499,124
+985,870,Saturday,1,Wedding,1,Rainy,Buffet Items,Lunch,Winter,162,803,182
+709,582,Wednesday,0,Wedding,1,Rainy,Bakery,Dinner,Winter,79,564,145
+460,421,Thursday,0,Festival,1,Sunny,Cooked Meals,Lunch,Winter,41,398,62
+871,683,Friday,0,Corporate Lunch,1,Rainy,Bakery,Dinner,Winter,122,666,205
+574,562,Wednesday,0,Wedding,1,Hot,Bakery,Lunch,Monsoon,71,529,45
+749,734,Friday,0,Corporate Lunch,1,Hot,Bakery,Lunch,Winter,104,749,0
+679,492,Tuesday,0,Corporate Lunch,1,Rainy,Buffet Items,Lunch,Monsoon,102,473,206
+856,756,Tuesday,0,Conference,1,Rainy,Cooked Meals,Breakfast,Summer,110,732,124
+882,794,Saturday,1,Corporate Lunch,1,Sunny,Packaged Food,Breakfast,Winter,93,775,107
+1076,909,Sunday,1,Festival,1,Cloudy,Dairy & Drinks,Dinner,Monsoon,131,881,195
+467,442,Tuesday,0,Conference,1,Hot,Cooked Meals,Lunch,Winter,48,415,52
+744,582,Friday,0,Festival,1,Rainy,Cooked Meals,Breakfast,Winter,124,604,140
+928,901,Tuesday,0,College Fest,1,Cloudy,Buffet Items,Dinner,Monsoon,154,928,0

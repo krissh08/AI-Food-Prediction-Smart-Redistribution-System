@@ -1,0 +1,13 @@
+{
+    "demand": {
+        "mae": 20.31,
+        "rmse": 25.15,
+        "r2": 0.9839
+    },
+    "surplus": {
+        "mae": 24.4,
+        "rmse": 32.0,
+        "r2": 0.7553
+    },
+    "training_samples": 800
+}
