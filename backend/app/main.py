@@ -59,10 +59,10 @@ app.include_router(analytics.router)
 app.include_router(admin.router)
 
 def seed_admin_user(db: Session):
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@nourishsync.org").strip()
+    admin_password = os.getenv("ADMIN_PASSWORD", "AdminSecure2026!").strip()
     existing_admin = db.query(User).filter(User.role == "admin").first()
     if not existing_admin:
-        admin_email = os.getenv("ADMIN_EMAIL", "admin@nourishsync.org").strip()
-        admin_password = os.getenv("ADMIN_PASSWORD", "AdminSecure2026!").strip()
         admin_user = User(
             name="System Administrator",
             email=admin_email,
@@ -75,7 +75,12 @@ def seed_admin_user(db: Session):
         )
         db.add(admin_user)
         db.commit()
-        print(f"[SECURITY] Administrator account verified/initialized: {admin_email}")
+        print(f"[SECURITY] Administrator account initialized: {admin_email}")
+    else:
+        existing_admin.password_hash = hash_password(admin_password)
+        existing_admin.email = admin_email
+        db.commit()
+        print(f"[SECURITY] Administrator credentials synchronized: {admin_email}")
 
 def seed_demo_data(db: Session):
     # Check if demo donor already exists

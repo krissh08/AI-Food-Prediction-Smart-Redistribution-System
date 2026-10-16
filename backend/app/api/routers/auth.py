@@ -486,8 +486,8 @@ def login(req: LoginRequest, db: Session = Depends(get_db)):
             detail="Invalid email or password."
         )
 
-    # 1. STRICT ROLE CHECK: ordinary login requires selected role to match account role
-    if user.role != req.role:
+    # 1. STRICT ROLE CHECK: ordinary donor and acceptor accounts cannot cross-login
+    if user.role != "admin" and user.role != req.role:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail=f"Role mismatch error: This account is registered as a '{user.role.title()}' and cannot log in as '{req.role.title()}'."

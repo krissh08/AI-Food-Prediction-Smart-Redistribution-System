@@ -101,6 +101,18 @@ export const AdminLoginPage = ({ onNavigate }) => {
           >
             {loading ? "Authenticating..." : "Authenticate & Enter Gateway"} <ArrowRight className="w-4 h-4" />
           </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setEmail("admin@nourishsync.org");
+              setPassword("AdminSecure2026!");
+            }}
+            className="w-full py-2 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700/80 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
+          >
+            <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+            Quick Fill Master Admin Credentials
+          </button>
         </form>
 
         <div className="pt-2 border-t border-slate-800 text-center">
