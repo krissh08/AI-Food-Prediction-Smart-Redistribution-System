@@ -23,7 +23,10 @@ import { AcceptorPickupsPage } from "./pages/AcceptorPickupsPage";
 import { AcceptorAnalyticsPage } from "./pages/AcceptorAnalyticsPage";
 
 import { AdminDashboard } from "./pages/AdminDashboard";
+import { AdminLoginPage } from "./pages/AdminLoginPage";
 import { UserProfilePage } from "./pages/UserProfilePage";
+import { VerifyEmailPage } from "./pages/VerifyEmailPage";
+import { ApplicationStatusPage } from "./pages/ApplicationStatusPage";
 
 const MainContent = () => {
   const { user } = useAuth();
@@ -48,6 +51,12 @@ const MainContent = () => {
         return <LandingPage onNavigate={navigate} />;
       case "/login":
         return <LoginPage onNavigate={navigate} />;
+      case "/admin/login":
+        return <AdminLoginPage onNavigate={navigate} />;
+      case "/verify-email":
+        return <VerifyEmailPage onNavigate={navigate} />;
+      case "/application-status":
+        return <ApplicationStatusPage onNavigate={navigate} />;
       case "/register/donor":
         return <RegisterDonorPage onNavigate={navigate} />;
       case "/register/acceptor":
@@ -148,7 +157,15 @@ const MainContent = () => {
     }
   };
 
-  const isPublicPage = ["/", "/login", "/register/donor", "/register/acceptor"].includes(currentPath);
+  const isPublicPage = [
+    "/",
+    "/login",
+    "/admin/login",
+    "/verify-email",
+    "/application-status",
+    "/register/donor",
+    "/register/acceptor"
+  ].includes(currentPath);
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">

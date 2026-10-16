@@ -3,9 +3,13 @@ const API_BASE_URL = "http://localhost:8000/api";
 export async function request(endpoint, options = {}) {
   const token = localStorage.getItem("token");
   const headers = {
-    "Content-Type": "application/json",
     ...options.headers,
   };
+
+  // Only set Content-Type to JSON if not uploading FormData
+  if (!(options.body instanceof FormData)) {
+    headers["Content-Type"] = "application/json";
+  }
 
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
@@ -20,7 +24,7 @@ export async function request(endpoint, options = {}) {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
 
     if (response.status === 401) {
-      // Unauthorized token expired - clear token
+      // Unauthorized or token expired - clear stored auth
       localStorage.removeItem("token");
       localStorage.removeItem("user");
     }
@@ -42,6 +46,14 @@ export const authAPI = {
   login: (credentials) => request("/auth/login", { method: "POST", body: JSON.stringify(credentials) }),
   registerDonor: (data) => request("/auth/register/donor", { method: "POST", body: JSON.stringify(data) }),
   registerAcceptor: (data) => request("/auth/register/acceptor", { method: "POST", body: JSON.stringify(data) }),
+  uploadDocument: (applicationId, formData) => request(`/auth/applications/${applicationId}/documents`, {
+    method: "POST",
+    body: formData
+  }),
+  verifyEmail: (token) => request(`/auth/verify-email?token=${encodeURIComponent(token)}`),
+  resendVerification: (email) => request("/auth/resend-verification", { method: "POST", body: JSON.stringify({ email }) }),
+  getApplicationStatus: (applicationId) => request(`/auth/applications/${applicationId}/status`),
+  checkStatusByEmail: (email) => request("/auth/status-by-email", { method: "POST", body: JSON.stringify({ email }) }),
   logout: () => request("/auth/logout", { method: "POST" }),
   getMe: () => request("/auth/me"),
 };
@@ -60,9 +72,10 @@ export const acceptorAPI = {
 };
 
 export const aiAPI = {
-  predictSurplus: (data) => request("/api/ai/predict-surplus".replace("/api", ""), { method: "POST", body: JSON.stringify(data) }),
+  predictSurplus: (data) => request("/ai/predict-surplus", { method: "POST", body: JSON.stringify(data) }),
   getHistory: () => request("/ai/history"),
-  getWasteAnalysis: () => request("/ai/waste-analysis"),
+  getWasteAnalysis: () => request("/ai/surplus-analysis"),
+  getSurplusAnalysis: () => request("/ai/surplus-analysis"),
 };
 
 export const donationsAPI = {
@@ -91,5 +104,30 @@ export const analyticsAPI = {
 
 export const adminAPI = {
   getDashboard: () => request("/admin/dashboard"),
+  getApplications: (params = "") => request(`/admin/applications${params}`),
+  getApplicationDetail: (id) => request(`/admin/applications/${id}`),
+  approveApplication: (id, payload = {}) => request(`/admin/applications/${id}/approve`, { method: "POST", body: JSON.stringify(payload) }),
+  rejectApplication: (id, payload) => request(`/admin/applications/${id}/reject`, { method: "POST", body: JSON.stringify(payload) }),
+  getAuditLogs: (params = "") => request(`/admin/audit-logs${params}`),
   toggleUserStatus: (userId) => request(`/admin/users/${userId}/toggle-status`, { method: "PUT" }),
+  downloadDocument: async (applicationId, documentId, originalFilename) => {
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${API_BASE_URL}/admin/applications/${applicationId}/documents/${documentId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    if (!response.ok) {
+      throw new Error("Failed to download document.");
+    }
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = originalFilename;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  }
 };

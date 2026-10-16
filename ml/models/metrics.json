@@ -1,13 +1,40 @@
 {
-    "demand": {
-        "mae": 20.31,
-        "rmse": 25.15,
-        "r2": 0.9839
+    "model_name": "RandomForestRegressor",
+    "dataset_path": "ml/dataset/food_surplus_data.csv",
+    "dataset_provenance": "User-supplied food wastage dataset (1,782 raw records, unverified external source)",
+    "target_column": "Wastage Food Amount",
+    "target_interpretation": "Food Surplus Amount (units as recorded in dataset)",
+    "training_date": "2026-10-15T13:58:47.379096+00:00",
+    "random_seed": 42,
+    "raw_samples": 1782,
+    "duplicates_removed": 164,
+    "clean_samples": 1618,
+    "train_samples": 1294,
+    "test_samples": 324,
+    "features": {
+        "numerical": [
+            "Number of Guests",
+            "Quantity of Food"
+        ],
+        "categorical": [
+            "Type of Food",
+            "Event Type",
+            "Storage Conditions",
+            "Purchase History",
+            "Seasonality",
+            "Preparation Method",
+            "Geographical Location",
+            "Pricing"
+        ]
     },
-    "surplus": {
-        "mae": 24.4,
-        "rmse": 32.0,
-        "r2": 0.7553
+    "evaluation": {
+        "mae": 1.83,
+        "rmse": 2.92,
+        "r2": 0.9209
     },
-    "training_samples": 800
+    "metric_definitions": {
+        "mae": "Mean Absolute Error: Average absolute difference between predicted and actual surplus units.",
+        "rmse": "Root Mean Squared Error: Square root of mean squared error, penalizing larger deviations.",
+        "r2": "R-squared: Proportion of surplus variance explained by the features."
+    }
 }

@@ -48,11 +48,11 @@ export const UserProfilePage = () => {
           </div>
           <div>
             <span className="text-slate-400 block">Latitude</span>
-            <span className="font-mono text-slate-900">{prof.latitude || 12.9716}</span>
+            <span className="font-mono text-slate-900">{prof.latitude ?? "N/A"}</span>
           </div>
           <div>
             <span className="text-slate-400 block">Longitude</span>
-            <span className="font-mono text-slate-900">{prof.longitude || 77.5946}</span>
+            <span className="font-mono text-slate-900">{prof.longitude ?? "N/A"}</span>
           </div>
           {user.role === 'acceptor' && (
             <>

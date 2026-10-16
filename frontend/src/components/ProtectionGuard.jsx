@@ -53,5 +53,32 @@ export const ProtectionGuard = ({ allowedRoles = [], children, onNavigate }) => 
     );
   }
 
+  // ENFORCE APPROVAL STATUS: Donors and Acceptors must have approval_status === 'APPROVED'
+  if (user.role !== "admin" && user.approval_status !== "APPROVED") {
+    return (
+      <div className="min-h-[70vh] flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-white rounded-2xl border border-amber-200 shadow-xl p-8 text-center space-y-4">
+          <div className="w-12 h-12 rounded-full bg-amber-100 text-amber-600 mx-auto flex items-center justify-center">
+            <ShieldAlert className="w-6 h-6" />
+          </div>
+          <h2 className="text-xl font-bold text-slate-900">
+            {user.approval_status === "REJECTED" ? "Application Closed" : "Organization Approval Required"}
+          </h2>
+          <p className="text-sm text-slate-600">
+            {user.approval_status === "REJECTED"
+              ? "Your organization application was not approved by the administrator. To participate, please submit a new application."
+              : "Your organization is awaiting manual administrator approval. Operational dashboards remain locked until verified."}
+          </p>
+          <button
+            onClick={() => onNavigate(`/application-status?email=${encodeURIComponent(user.email || "")}`)}
+            className="btn btn-primary w-full"
+          >
+            View Verification Status
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return <>{children}</>;
 };

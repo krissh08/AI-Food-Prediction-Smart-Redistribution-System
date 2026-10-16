@@ -4,19 +4,37 @@ import datetime
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 
 # Add root directory to python path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+    load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
+    load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
+except ImportError:
+    pass
+
 from backend.app.database.database import engine, Base, SessionLocal
-from backend.app.models.models import User, DonorProfile, AcceptorProfile, FoodListing, DonationRequest, Notification
+from backend.app.database.migrations import run_migrations
+from backend.app.models.models import (
+    User,
+    DonorProfile,
+    AcceptorProfile,
+    FoodListing,
+    DonationRequest,
+    Notification,
+    Application
+)
 from backend.app.auth.auth import hash_password
 
 from backend.app.api.routers import auth, donor, acceptor, ai, donations, matching, notifications, analytics, admin
 from ml.prediction.predict import load_models
 
 app = FastAPI(
-    title="AI-Driven Food Surplus Prediction and Smart Redistribution System API",
+    title="NourishSync — AI-Driven Food Surplus Prediction and Smart Redistribution System API",
     description="Production REST API powering AI surplus predictions, donor-acceptor workflows, smart matching, and DevOps monitoring.",
     version="1.0.0"
 )
@@ -41,28 +59,22 @@ app.include_router(analytics.router)
 app.include_router(admin.router)
 
 def seed_demo_data(db: Session):
-    if db.query(User).count() > 0:
+    # Check if demo donor already exists
+    if db.query(User).filter(User.email == "donor@demo.com").first():
         return
 
-    print("Seeding initial demo accounts & sample food listings...")
+    print("Seeding initial demo donor & acceptor accounts with sample food listings...")
 
-    # 1. Admin Account
-    admin_user = User(
-        name="System Administrator",
-        email="admin@demo.com",
-        password_hash=hash_password("admin123"),
-        role="admin",
-        phone="+1-800-555-0199"
-    )
-    db.add(admin_user)
-
-    # 2. Food Donor Account
+    # 1. Food Donor Account
     donor_user = User(
         name="Grand Palace Hotel & Canteen",
         email="donor@demo.com",
         password_hash=hash_password("password123"),
         role="donor",
-        phone="+1-555-0144"
+        phone="+1-555-0144",
+        email_verified=True,
+        approval_status="APPROVED",
+        is_active=True
     )
     db.add(donor_user)
     db.flush()
@@ -72,6 +84,7 @@ def seed_demo_data(db: Session):
         organization_name="Grand Palace Hotel & Canteen",
         owner_name="Robert Vance",
         organization_type="Hotel",
+        parent_institution="Vance Hospitality Group",
         address="104 Tech Park Avenue, Central Campus",
         city="Bengaluru",
         state="Karnataka",
@@ -81,13 +94,28 @@ def seed_demo_data(db: Session):
     )
     db.add(donor_profile)
 
-    # 3. Food Acceptor Account
+    donor_app = Application(
+        user_id=donor_user.id,
+        application_type="donor",
+        organization_name="Grand Palace Hotel & Canteen",
+        organization_type="Hotel",
+        contact_name="Robert Vance",
+        status="APPROVED",
+        submitted_at=datetime.datetime.utcnow(),
+        reviewed_at=datetime.datetime.utcnow()
+    )
+    db.add(donor_app)
+
+    # 2. Food Acceptor Account
     acceptor_user = User(
         name="Hope Community Food Bank",
         email="acceptor@demo.com",
         password_hash=hash_password("password123"),
         role="acceptor",
-        phone="+1-555-0188"
+        phone="+1-555-0188",
+        email_verified=True,
+        approval_status="APPROVED",
+        is_active=True
     )
     db.add(acceptor_user)
     db.flush()
@@ -97,6 +125,7 @@ def seed_demo_data(db: Session):
         organization_name="Hope Community Food Bank",
         contact_person="Sarah Jenkins",
         organization_type="NGO",
+        food_distribution_activities="Daily community soup kitchen and surplus food distribution to local shelters.",
         address="42 Community Street, Near City Park",
         city="Bengaluru",
         state="Karnataka",
@@ -108,23 +137,35 @@ def seed_demo_data(db: Session):
         operating_hours="08:00 AM - 10:00 PM"
     )
     db.add(acceptor_profile)
+
+    acceptor_app = Application(
+        user_id=acceptor_user.id,
+        application_type="acceptor",
+        organization_name="Hope Community Food Bank",
+        organization_type="NGO",
+        contact_name="Sarah Jenkins",
+        status="APPROVED",
+        submitted_at=datetime.datetime.utcnow(),
+        reviewed_at=datetime.datetime.utcnow()
+    )
+    db.add(acceptor_app)
     db.flush()
 
-    # 4. Sample Food Listings
+    # 3. Sample Food Listings for Demo Donor only
     listing1 = FoodListing(
         donor_id=donor_profile.id,
         food_name="Fresh Vegetable Biryani & Gravy",
         category="Cooked Meals",
-        quantity=100,
+        quantity=80,
         unit="meals",
         preparation_time="12:30 PM",
-        expiry_time="08:30 PM (in 3 hours)",
+        expiry_time="08:30 PM (in 4 hours)",
         dietary_type="Vegetarian",
+        pickup_address="104 Tech Park Avenue, Central Campus",
+        latitude=12.9716,
+        longitude=77.5946,
         status="AVAILABLE",
-        pickup_address=donor_profile.address,
-        latitude=donor_profile.latitude,
-        longitude=donor_profile.longitude,
-        notes="Freshly prepared lunch surplus from corporate conference banquet."
+        notes="Hygienically packaged in food-grade insulated containers."
     )
     db.add(listing1)
 
@@ -132,20 +173,20 @@ def seed_demo_data(db: Session):
         donor_id=donor_profile.id,
         food_name="Assorted Pastries & Whole Wheat Bread",
         category="Bakery",
-        quantity=60,
+        quantity=40,
         unit="packets",
-        preparation_time="07:00 AM",
-        expiry_time="10:00 PM (in 5 hours)",
+        preparation_time="09:00 AM",
+        expiry_time="Tomorrow 11:00 AM",
         dietary_type="Vegetarian",
+        pickup_address="104 Tech Park Avenue, Central Campus",
+        latitude=12.9716,
+        longitude=77.5946,
         status="AVAILABLE",
-        pickup_address=donor_profile.address,
-        latitude=donor_profile.latitude,
-        longitude=donor_profile.longitude,
-        notes="Hygienically packed bakery items."
+        notes="Freshly baked morning batch."
     )
     db.add(listing2)
 
-    # 5. Welcome Notifications
+    # 4. Welcome Notifications
     db.add(Notification(
         user_id=donor_user.id,
         title="Donor Portal Ready",
@@ -162,17 +203,17 @@ def seed_demo_data(db: Session):
 
 @app.on_event("startup")
 def startup_event():
-    # Create DB tables
-    Base.metadata.create_all(bind=engine)
+    # 1. Run database migrations to ensure all tables & columns exist
+    run_migrations()
 
-    # Seed demo accounts if empty
+    # 2. Seed demo accounts if empty
     db = SessionLocal()
     try:
         seed_demo_data(db)
     finally:
         db.close()
 
-    # Pre-load ML model artifacts
+    # 3. Pre-load ML model artifacts
     try:
         load_models()
         print("ML Model pipeline loaded successfully at startup.")
@@ -182,7 +223,7 @@ def startup_event():
 @app.get("/")
 def root():
     return {
-        "system": "AI-Driven Food Surplus Prediction and Smart Redistribution System",
+        "system": "NourishSync — AI-Driven Food Surplus Prediction and Smart Redistribution System",
         "status": "Online",
         "documentation": "/docs",
         "ml_engine": "Active"

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import { Leaf, AlertCircle, Lock, Mail, UserCheck, Building2, HeartHandshake, ShieldCheck } from "lucide-react";
+import { authAPI } from "../services/api";
+import { Leaf, AlertCircle, Lock, Mail, UserCheck, Building2, HeartHandshake, ShieldCheck, RefreshCw } from "lucide-react";
 
 export const LoginPage = ({ onNavigate }) => {
   const { login } = useAuth();
@@ -11,10 +12,15 @@ export const LoginPage = ({ onNavigate }) => {
   
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [resendLoading, setResendLoading] = useState(false);
+  const [resendMsg, setResendMsg] = useState("");
+  const [resendDevUrl, setResendDevUrl] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setResendMsg("");
+    setResendDevUrl("");
     setLoading(true);
 
     try {
@@ -30,6 +36,28 @@ export const LoginPage = ({ onNavigate }) => {
       setError(err.message || "Failed to log in. Please check credentials and selected role.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleResend = async () => {
+    if (!email) {
+      setResendMsg("Please enter your email address above.");
+      return;
+    }
+    setResendLoading(true);
+    setResendMsg("");
+    setResendDevUrl("");
+
+    try {
+      const res = await authAPI.resendVerification(email);
+      setResendMsg(res.message || "Verification link sent! Check your inbox.");
+      if (res.verification_url) {
+        setResendDevUrl(res.verification_url);
+      }
+    } catch (err) {
+      setResendMsg(err.message || "Failed to send verification link.");
+    } finally {
+      setResendLoading(false);
     }
   };
 
@@ -49,6 +77,10 @@ export const LoginPage = ({ onNavigate }) => {
     }
   };
 
+  const isUnverifiedError = error && (error.toLowerCase().includes("not verified") || error.toLowerCase().includes("verification"));
+  const isPendingError = error && (error.toLowerCase().includes("pending") || error.toLowerCase().includes("awaiting"));
+  const isRejectedError = error && error.toLowerCase().includes("rejected");
+
   return (
     <div className="min-h-[85vh] flex items-center justify-center p-4 bg-slate-50">
       <div className="max-w-md w-full bg-white rounded-3xl border border-slate-200 shadow-xl p-8 space-y-6">
@@ -64,9 +96,55 @@ export const LoginPage = ({ onNavigate }) => {
 
         {/* Error Alert */}
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-xl text-xs flex items-start gap-2">
-            <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
-            <span>{error}</span>
+          <div className="bg-red-50 border border-red-200 text-red-700 p-3.5 rounded-2xl text-xs space-y-2.5">
+            <div className="flex items-start gap-2">
+              <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+              <span className="leading-relaxed">{error}</span>
+            </div>
+
+            {/* If pending review */}
+            {isPendingError && (
+              <div className="pt-2 border-t border-red-200/60">
+                <button
+                  type="button"
+                  onClick={() => onNavigate(`/application-status?email=${encodeURIComponent(email)}`)}
+                  className="btn btn-outline border-amber-400 text-amber-900 bg-amber-50/70 hover:bg-amber-100 w-full text-xs py-2 font-bold"
+                >
+                  Check Application Status
+                </button>
+              </div>
+            )}
+
+            {/* If rejected */}
+            {isRejectedError && (
+              <div className="pt-2 border-t border-red-200/60">
+                <button
+                  type="button"
+                  onClick={() => onNavigate(`/application-status?email=${encodeURIComponent(email)}`)}
+                  className="btn btn-outline border-red-300 text-red-800 bg-red-100/50 hover:bg-red-100 w-full text-xs py-2 font-bold"
+                >
+                  View Details & Reapply
+                </button>
+              </div>
+            )}
+
+            {/* If unverified */}
+            {isUnverifiedError && (
+              <div className="pt-2 border-t border-red-200/60 flex flex-col gap-1.5">
+                <button
+                  type="button"
+                  disabled={resendLoading}
+                  onClick={handleResend}
+                  className="text-xs text-red-800 font-bold hover:underline flex items-center gap-1"
+                >
+                  <RefreshCw className={`w-3.5 h-3.5 ${resendLoading ? "animate-spin" : ""}`} />
+                  {resendLoading ? "Resending..." : `Resend verification link to ${email || "your email"}`}
+                </button>
+                {resendMsg && (
+                  <p className="text-[11px] font-semibold text-emerald-700">{resendMsg}</p>
+                )}
+              </div>
+            )}
           </div>
         )}
 
@@ -160,31 +238,25 @@ export const LoginPage = ({ onNavigate }) => {
           <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block text-center">
             Demo Evaluation Quick Sign-In
           </span>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 gap-2">
             <button
               onClick={() => handleQuickDemo("donor")}
-              className="py-1.5 px-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-lg text-[10px] font-bold transition-colors"
+              className="py-2 px-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-xl text-xs font-bold transition-colors"
             >
-              Donor Demo
+              Food Donor Demo
             </button>
             <button
               onClick={() => handleQuickDemo("acceptor")}
-              className="py-1.5 px-2 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-[10px] font-bold transition-colors"
+              className="py-2 px-3 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-xl text-xs font-bold transition-colors"
             >
-              Acceptor Demo
-            </button>
-            <button
-              onClick={() => handleQuickDemo("admin")}
-              className="py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 rounded-lg text-[10px] font-bold transition-colors"
-            >
-              Admin Demo
+              Food Acceptor Demo
             </button>
           </div>
         </div>
 
         {/* Registration Links */}
-        <div className="text-center text-xs text-slate-500 space-y-1">
-          <p>Don't have an account?</p>
+        <div className="text-center text-xs text-slate-500 space-y-2">
+          <p>Don't have an organization account?</p>
           <div className="flex justify-center gap-3 font-semibold text-emerald-600">
             <button onClick={() => onNavigate("/register/donor")} className="hover:underline">
               Register as Donor
@@ -192,6 +264,16 @@ export const LoginPage = ({ onNavigate }) => {
             <span>•</span>
             <button onClick={() => onNavigate("/register/acceptor")} className="hover:underline text-blue-600">
               Register as Acceptor
+            </button>
+          </div>
+          
+          <div className="pt-2 border-t border-slate-100">
+            <button
+              onClick={() => onNavigate("/admin/login")}
+              className="text-[11px] text-slate-400 hover:text-slate-700 font-semibold flex items-center justify-center gap-1 mx-auto"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-amber-500" />
+              Administrator Access Portal
             </button>
           </div>
         </div>

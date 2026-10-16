@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
 import datetime
+import json
 
 from backend.app.database.database import get_db
 from backend.app.models.models import User, DonorProfile, FoodListing, DonationRequest, Pickup, AIPrediction
@@ -24,12 +25,29 @@ def get_donor_dashboard(current_user: User = Depends(require_donor), db: Session
     
     total_food_saved_meals = sum([l.quantity for l in listings if l.status == 'COMPLETED'])
 
-    # Recent AI Prediction
+    # Recent AI Predictions from trained model
     latest_pred = db.query(AIPrediction).filter(AIPrediction.donor_id == donor_profile.id).order_by(AIPrediction.id.desc()).first()
+    recent_preds_db = db.query(AIPrediction).filter(AIPrediction.donor_id == donor_profile.id).order_by(AIPrediction.id.desc()).limit(5).all()
 
-    predicted_demand = latest_pred.predicted_demand if latest_pred else 610
-    predicted_surplus = latest_pred.predicted_surplus if latest_pred else 82
-    todays_prepared = (latest_pred.predicted_demand + latest_pred.predicted_surplus) if latest_pred else 700
+    predicted_demand = latest_pred.predicted_demand if latest_pred else 0
+    predicted_surplus = latest_pred.predicted_surplus if latest_pred else 0
+    todays_prepared = (latest_pred.predicted_demand + latest_pred.predicted_surplus) if latest_pred else 0
+
+    recent_predictions = []
+    for p in recent_preds_db:
+        try:
+            inp = json.loads(p.input_data)
+        except Exception:
+            inp = {}
+        recent_predictions.append({
+            "id": p.id,
+            "quantity_of_food": inp.get("quantity_of_food") or inp.get("meals_planned", 0),
+            "number_of_guests": inp.get("number_of_guests") or inp.get("expected_customers", 0),
+            "type_of_food": inp.get("type_of_food") or inp.get("food_category", "Standard"),
+            "predicted_surplus": p.predicted_surplus,
+            "estimated_consumption": p.predicted_demand,
+            "created_at": p.created_at.strftime("%Y-%m-%d %H:%M")
+        })
 
     # Pending Requests
     pending_requests_db = db.query(DonationRequest).filter(
@@ -64,15 +82,55 @@ def get_donor_dashboard(current_user: User = Depends(require_donor), db: Session
             "contact_phone": p.donation_request.acceptor.user.phone or "N/A"
         })
 
-    # Monthly Waste Trend
-    monthly_trend = [
-        {"month": "May", "prepared": 18000, "consumed": 15500, "surplus_saved": 2100, "wasted": 400},
-        {"month": "Jun", "prepared": 19500, "consumed": 16800, "surplus_saved": 2400, "wasted": 300},
-        {"month": "Jul", "prepared": 21000, "consumed": 18200, "surplus_saved": 2500, "wasted": 300},
-        {"month": "Aug", "prepared": 20500, "consumed": 17900, "surplus_saved": 2350, "wasted": 250},
-        {"month": "Sep", "prepared": 22000, "consumed": 19100, "surplus_saved": 2700, "wasted": 200},
-        {"month": "Oct", "prepared": todays_prepared, "consumed": predicted_demand, "surplus_saved": predicted_surplus, "wasted": 50}
-    ]
+    # Authentic Surplus by Food Category from this donor's actual listings
+    category_counts = {}
+    for l in listings:
+        cat = l.category or "Other"
+        category_counts[cat] = category_counts.get(cat, 0) + l.quantity
+
+    total_listed_qty = sum(category_counts.values())
+    surplus_by_category = []
+    if total_listed_qty > 0:
+        for cat, qty in category_counts.items():
+            pct = round((qty / total_listed_qty) * 100, 1)
+            saved = sum([l.quantity for l in listings if l.category == cat and l.status == 'COMPLETED'])
+            surplus_by_category.append({
+                "category": cat,
+                "surplus_pct": pct,
+                "units_saved": saved
+            })
+
+    # Authentic Monthly Surplus Redistribution Trend for this donor
+    now = datetime.datetime.now()
+    month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    months_map = {}
+    for i in range(5, -1, -1):
+        m_idx = (now.month - 1 - i) % 12
+        m_name = month_names[m_idx]
+        months_map[m_name] = {
+            "month": m_name,
+            "prepared": 0,
+            "consumed": 0,
+            "surplus_saved": 0,
+            "surplus_uncollected": 0,
+            "wasted": 0
+        }
+
+    for l in listings:
+        m_name = l.created_at.strftime("%b")
+        if m_name in months_map:
+            months_map[m_name]["prepared"] += l.quantity
+            if l.status == 'COMPLETED':
+                months_map[m_name]["surplus_saved"] += l.quantity
+            elif l.status in ['EXPIRED', 'CANCELLED']:
+                months_map[m_name]["surplus_uncollected"] += l.quantity
+                months_map[m_name]["wasted"] += l.quantity
+
+    curr_month = now.strftime("%b")
+    if latest_pred and curr_month in months_map:
+        months_map[curr_month]["consumed"] = latest_pred.predicted_demand
+
+    monthly_trend = list(months_map.values())
 
     return {
         "donor_name": current_user.name,
@@ -81,9 +139,12 @@ def get_donor_dashboard(current_user: User = Depends(require_donor), db: Session
             "todays_prepared_meals": todays_prepared,
             "predicted_demand": predicted_demand,
             "predicted_surplus": predicted_surplus,
+            "ai_predicted_surplus": predicted_surplus,
+            "available_food_listings": active_donations,
             "active_donations": active_donations,
             "completed_donations": completed_donations,
-            "food_saved_meals": total_food_saved_meals
+            "food_saved_meals": total_food_saved_meals,
+            "total_surplus_redistributed": total_food_saved_meals
         },
         "recent_listings": [
             {
@@ -96,6 +157,8 @@ def get_donor_dashboard(current_user: User = Depends(require_donor), db: Session
                 "expiry_time": l.expiry_time
             } for l in sorted(listings, key=lambda x: x.id, reverse=True)[:5]
         ],
+        "recent_predictions": recent_predictions,
+        "surplus_by_category": surplus_by_category,
         "pending_requests": pending_requests,
         "upcoming_pickups": upcoming_pickups,
         "monthly_trend": monthly_trend

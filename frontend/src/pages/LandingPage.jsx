@@ -47,7 +47,7 @@ export const LandingPage = ({ onNavigate }) => {
           
           <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold px-4 py-2 rounded-full shadow-inner">
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            AI-Driven Food Waste Reduction & Redistribution Platform
+            AI-Driven Food Surplus Prediction & Smart Redistribution Platform
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
@@ -143,10 +143,10 @@ export const LandingPage = ({ onNavigate }) => {
           <div className="space-y-6">
             <span className="badge badge-emerald">Machine Learning Engine</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Predict Food Surplus <span className="text-emerald-400">Before</span> It Happens
+              Predict Food Surplus <span className="text-emerald-400">Before</span> It Accumulates
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Our trained Random Forest & Gradient Boosting models analyze historical attendance, event schedules, weather patterns, and meal categories to recommend exact preparation quantities and flag unusual waste spikes.
+              Our trained Random Forest model analyzes event scale, food types, preparation methods, storage conditions, and attendance to estimate surplus food amounts and flag high-surplus events.
             </p>
             
             <ul className="space-y-3">
@@ -154,7 +154,7 @@ export const LandingPage = ({ onNavigate }) => {
                 "Food Demand & Consumption Forecasting",
                 "Expected Surplus Volume Calculation",
                 "Optimized Cooking Preparation Recommendations",
-                "Automated Waste Anomaly Warnings (>60% above baseline)"
+                "Automated High-Surplus Warnings (>25% surplus ratio)"
               ].map((text, i) => (
                 <li key={i} className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
@@ -175,31 +175,31 @@ export const LandingPage = ({ onNavigate }) => {
           <div className="bg-slate-800/90 rounded-2xl border border-slate-700 p-6 sm:p-8 shadow-2xl space-y-5">
             <div className="flex items-center justify-between border-b border-slate-700 pb-3">
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">AI Model Output Example</span>
-              <span className="text-xs bg-emerald-950 border border-emerald-500/40 text-emerald-300 px-3 py-1 rounded-full font-mono font-bold">Accuracy: 94.2%</span>
+              <span className="text-xs bg-emerald-950 border border-emerald-500/40 text-emerald-300 px-3 py-1 rounded-full font-mono font-bold">Accuracy (R²): 92.1%</span>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
-                <span className="text-xs text-slate-400 block font-semibold">Meals Planned</span>
-                <span className="text-2xl font-bold text-white mt-1 block">700 meals</span>
+                <span className="text-xs text-slate-400 block font-semibold">Quantity of Food</span>
+                <span className="text-2xl font-bold text-white mt-1 block">450 units</span>
               </div>
               <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
-                <span className="text-xs text-slate-400 block font-semibold">Predicted Demand</span>
-                <span className="text-2xl font-bold text-emerald-400 mt-1 block">610 meals</span>
+                <span className="text-xs text-slate-400 block font-semibold">Estimated Demand</span>
+                <span className="text-2xl font-bold text-emerald-400 mt-1 block">409 units</span>
               </div>
               <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
                 <span className="text-xs text-slate-400 block font-semibold">Predicted Surplus</span>
-                <span className="text-2xl font-bold text-amber-400 mt-1 block">82 meals</span>
+                <span className="text-2xl font-bold text-amber-400 mt-1 block">41 units</span>
               </div>
               <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
                 <span className="text-xs text-slate-400 block font-semibold">Recommended Prep</span>
-                <span className="text-2xl font-bold text-teal-300 mt-1 block">640 meals</span>
+                <span className="text-2xl font-bold text-teal-300 mt-1 block">429 units</span>
               </div>
             </div>
 
             <div className="bg-emerald-950/80 border border-emerald-500/40 p-4 rounded-xl text-xs text-emerald-200 space-y-1">
               <span className="font-bold text-emerald-300 block">AI Optimization Insight:</span>
-              <span>Reducing fresh prep by 60 meals saves approx. ₹4,200 and prevents 48kg of food waste!</span>
+              <span>Predicting 41 units of surplus allows instant pre-coordination with local NGO food banks!</span>
             </div>
           </div>
         </div>
@@ -227,7 +227,7 @@ export const LandingPage = ({ onNavigate }) => {
                 Restaurants, Hotels, College Canteens, Hostels, Event Organizers, and Cafeterias.
               </p>
               <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
-                <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" /> AI Surplus Forecasting & Waste Trends</li>
+                <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" /> AI Surplus Forecasting & Redistribution Trends</li>
                 <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" /> One-Click Food Surplus Listing Creation</li>
                 <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" /> Real-time Acceptor Request Approval</li>
                 <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" /> Automated Pickup Tracking & CSR Reports</li>

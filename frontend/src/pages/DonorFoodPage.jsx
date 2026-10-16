@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { donorAPI } from "../services/api";
+import { useAuth } from "../context/AuthContext";
 import { PlusCircle, Utensils, Clock, MapPin, Trash2, CheckCircle2, AlertCircle } from "lucide-react";
 
 export const DonorFoodPage = () => {
+  const { user } = useAuth();
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -15,8 +17,8 @@ export const DonorFoodPage = () => {
     preparation_time: "12:30 PM",
     expiry_time: "08:30 PM (in 4 hours)",
     dietary_type: "Vegetarian",
-    pickup_address: "104 Tech Park Avenue, Central Campus",
-    notes: "Fresh surplus meals hygienically stored."
+    pickup_address: user?.donor_profile?.address ? `${user.donor_profile.address}, ${user.donor_profile.city}` : "",
+    notes: ""
   });
 
   useEffect(() => {

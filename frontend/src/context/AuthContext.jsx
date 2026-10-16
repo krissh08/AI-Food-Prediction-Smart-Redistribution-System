@@ -60,22 +60,12 @@ export const AuthProvider = ({ children }) => {
 
   const registerDonor = async (data) => {
     const res = await authAPI.registerDonor(data);
-    localStorage.setItem("token", res.access_token);
-    setToken(res.access_token);
-    const userData = await authAPI.getMe();
-    setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
-    return userData;
+    return res;
   };
 
   const registerAcceptor = async (data) => {
     const res = await authAPI.registerAcceptor(data);
-    localStorage.setItem("token", res.access_token);
-    setToken(res.access_token);
-    const userData = await authAPI.getMe();
-    setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
-    return userData;
+    return res;
   };
 
   const logout = () => {

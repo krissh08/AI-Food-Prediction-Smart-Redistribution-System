@@ -42,7 +42,7 @@ export const DonorPickupsPage = () => {
               <div>
                 <h3 className="font-bold text-slate-900 text-base">{p.food_name}</h3>
                 <p className="text-xs text-slate-600 mt-1">Collecting Organization: <span className="font-bold">{p.acceptor_organization}</span></p>
-                <p className="text-xs text-slate-600">Quantity: <span className="font-bold text-emerald-700">{p.requested_quantity || 100} meals</span></p>
+                <p className="text-xs text-slate-600">Quantity: <span className="font-bold text-emerald-700">{p.requested_quantity ?? 0} units</span></p>
               </div>
 
               <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">

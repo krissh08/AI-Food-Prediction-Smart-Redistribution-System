@@ -84,7 +84,7 @@ export const AcceptorDashboard = ({ onNavigate }) => {
         <StatCard title="Pending Requests" value={kpi.pending_requests} unit="requests" icon={Inbox} color="amber" subtext="Awaiting donor" />
         <StatCard title="Accepted" value={kpi.accepted_donations} unit="donations" icon={CheckCircle} color="purple" subtext="Approved for pickup" />
         <StatCard title="Today's Pickups" value={kpi.todays_pickups_count} unit="scheduled" icon={Truck} color="blue" subtext="Scheduled today" />
-        <StatCard title="Total Received" value={kpi.total_food_received_meals} unit="meals" icon={HeartHandshake} color="emerald" badgeText="Distributed" />
+        <StatCard title="Total Received" value={kpi.total_food_received_meals} unit="meals" icon={HeartHandshake} color="emerald" subtext="Distributed to community" />
       </div>
 
       {/* MAP & EXPIRING SOON ROW */}

@@ -26,10 +26,10 @@ export const AcceptorAnalyticsPage = () => {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard title="Total Food Received" value={data?.total_food_received_meals || 2450} unit="meals" icon={HeartHandshake} color="blue" />
-        <StatCard title="Requests Submitted" value={data?.total_requests_submitted || 32} unit="requests" icon={Inbox} color="emerald" />
-        <StatCard title="Completed Pickups" value={data?.completed_pickups || 28} unit="pickups" icon={Truck} color="purple" />
-        <StatCard title="Donor Partners" value={data?.active_donor_partners || 14} icon={Users} color="amber" subtext="Active network" />
+        <StatCard title="Total Food Received" value={data?.total_food_received_meals ?? 0} unit="meals" icon={HeartHandshake} color="blue" />
+        <StatCard title="Requests Submitted" value={data?.total_requests_submitted ?? 0} unit="requests" icon={Inbox} color="emerald" />
+        <StatCard title="Completed Pickups" value={data?.completed_pickups ?? 0} unit="pickups" icon={Truck} color="purple" />
+        <StatCard title="Donor Partners" value={data?.active_donor_partners ?? 0} icon={Users} color="amber" subtext="Active network" />
       </div>
 
       {/* Charts */}

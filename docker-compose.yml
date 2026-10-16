@@ -31,6 +31,17 @@ services:
       DATABASE_URL: postgresql://postgres:postgres_secure_password_2026@db:5432/food_surplus_db
       JWT_SECRET: super_secret_devops_food_surplus_key_2026
       ALGORITHM: HS256
+      FRONTEND_URL: http://localhost
+      BACKEND_URL: http://localhost:8000
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: 587
+      SMTP_USERNAME: ${SMTP_USERNAME:-nourishsync@gmail.com}
+      SMTP_APP_PASSWORD: ${SMTP_APP_PASSWORD:-}
+      EMAIL_FROM: ${EMAIL_FROM:-nourishsync@gmail.com}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@nourishsync.org}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+    volumes:
+      - document_uploads:/app/uploads/documents
     depends_on:
       db:
         condition: service_healthy
@@ -48,3 +59,4 @@ services:
 
 volumes:
   postgres_data:
+  document_uploads:

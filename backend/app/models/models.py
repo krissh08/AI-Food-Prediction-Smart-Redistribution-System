@@ -14,11 +14,26 @@ class User(Base):
     role = Column(String, nullable=False)  # 'donor', 'acceptor', 'admin'
     phone = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
+    email_verified = Column(Boolean, default=False)
+    approval_status = Column(String, default="EMAIL_UNVERIFIED")  # 'EMAIL_UNVERIFIED', 'PENDING_APPROVAL', 'APPROVED', 'REJECTED'
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
+
+    # Backward compatibility property for is_verified
+    @property
+    def is_verified(self):
+        return self.email_verified
+
+    @is_verified.setter
+    def is_verified(self, value):
+        self.email_verified = value
 
     donor_profile = relationship("DonorProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")
     acceptor_profile = relationship("AcceptorProfile", back_populates="user", uselist=False, cascade="all, delete-orphan")
     notifications = relationship("Notification", back_populates="user", cascade="all, delete-orphan")
+    applications = relationship("Application", back_populates="user", foreign_keys="Application.user_id", cascade="all, delete-orphan")
+    verification_tokens = relationship("EmailVerificationToken", back_populates="user", cascade="all, delete-orphan")
+    audit_logs = relationship("AuditLog", back_populates="actor", foreign_keys="AuditLog.actor_id")
 
 
 class DonorProfile(Base):
@@ -28,7 +43,8 @@ class DonorProfile(Base):
     user_id = Column(Integer, ForeignKey("users.id"), unique=True, nullable=False)
     organization_name = Column(String, nullable=False)
     owner_name = Column(String, nullable=True)
-    organization_type = Column(String, nullable=False) # Restaurant, Hotel, Canteen, etc.
+    organization_type = Column(String, nullable=False) # Restaurant, Hotel, College canteen, Hostel, Event organizer, Cafeteria, Other
+    parent_institution = Column(Text, nullable=True) # Optional explanation if operating under a university/hotel chain
     address = Column(String, nullable=False)
     city = Column(String, nullable=False)
     state = Column(String, nullable=False)
@@ -47,7 +63,8 @@ class AcceptorProfile(Base):
     user_id = Column(Integer, ForeignKey("users.id"), unique=True, nullable=False)
     organization_name = Column(String, nullable=False)
     contact_person = Column(String, nullable=True)
-    organization_type = Column(String, nullable=False) # NGO, Food Bank, Charity, etc.
+    organization_type = Column(String, nullable=False) # NGO, Food bank, Charity, Shelter, Community organization, Other
+    food_distribution_activities = Column(Text, nullable=True) # Evidence/description of charitable food distribution
     address = Column(String, nullable=False)
     city = Column(String, nullable=False)
     state = Column(String, nullable=False)
@@ -60,6 +77,71 @@ class AcceptorProfile(Base):
 
     user = relationship("User", back_populates="acceptor_profile")
     donation_requests = relationship("DonationRequest", back_populates="acceptor", cascade="all, delete-orphan")
+
+
+class Application(Base):
+    __tablename__ = "applications"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    application_type = Column(String, nullable=False)  # 'donor' or 'acceptor'
+    organization_name = Column(String, nullable=False)
+    organization_type = Column(String, nullable=False)
+    contact_name = Column(String, nullable=True)
+    status = Column(String, default="EMAIL_UNVERIFIED", index=True)  # 'EMAIL_UNVERIFIED', 'PENDING_APPROVAL', 'APPROVED', 'REJECTED'
+    rejection_reason = Column(Text, nullable=True)
+    admin_notes = Column(Text, nullable=True)
+    submitted_at = Column(DateTime, default=datetime.datetime.utcnow)
+    reviewed_at = Column(DateTime, nullable=True)
+    reviewed_by = Column(Integer, ForeignKey("users.id"), nullable=True)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
+
+    user = relationship("User", back_populates="applications", foreign_keys=[user_id])
+    reviewer = relationship("User", foreign_keys=[reviewed_by])
+    documents = relationship("ApplicationDocument", back_populates="application", cascade="all, delete-orphan")
+
+
+class ApplicationDocument(Base):
+    __tablename__ = "application_documents"
+
+    id = Column(Integer, primary_key=True, index=True)
+    application_id = Column(Integer, ForeignKey("applications.id"), nullable=False)
+    document_type = Column(String, nullable=False) # 'business_registration', 'fssai_license', 'tax_exemption_80g', 'activity_report', 'student_union_letter', 'other'
+    original_filename = Column(String, nullable=False)
+    storage_key = Column(String, unique=True, nullable=False)
+    content_type = Column(String, nullable=False)
+    file_size = Column(Integer, nullable=False)
+    uploaded_at = Column(DateTime, default=datetime.datetime.utcnow)
+
+    application = relationship("Application", back_populates="documents")
+
+
+class EmailVerificationToken(Base):
+    __tablename__ = "email_verification_tokens"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    token_hash = Column(String, unique=True, index=True, nullable=False)
+    expires_at = Column(DateTime, nullable=False)
+    used_at = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow)
+
+    user = relationship("User", back_populates="verification_tokens")
+
+
+class AuditLog(Base):
+    __tablename__ = "audit_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    actor_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+    action = Column(String, nullable=False, index=True)
+    target_type = Column(String, nullable=True) # 'application', 'user', 'document', 'system'
+    target_id = Column(Integer, nullable=True)
+    metadata_json = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow, index=True)
+
+    actor = relationship("User", back_populates="audit_logs", foreign_keys=[actor_id])
 
 
 class FoodListing(Base):

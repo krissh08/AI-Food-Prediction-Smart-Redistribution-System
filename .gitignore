@@ -19,15 +19,21 @@ env/
 ml/models/*.pkl
 !ml/models/.gitkeep
 
-# Environment variables
+# Environment variables & secrets
 .env
+.env.*
 !.env.example
 
 # Databases & local files
 *.sqlite3
 *.db
-!food_surplus.db
+*.db.bak
+*.bak
+food_surplus.db
+backups/
+uploads/
 
 # OS generated files
 .DS_Store
 Thumbs.db
+
