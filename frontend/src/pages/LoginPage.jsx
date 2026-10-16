@@ -70,10 +70,6 @@ export const LoginPage = ({ onNavigate }) => {
       setEmail("acceptor@demo.com");
       setPassword("password123");
       setRole("acceptor");
-    } else if (demoRole === "admin") {
-      setEmail("admin@nourishsync.org");
-      setPassword("AdminSecure2026!");
-      setRole("admin");
     }
   };
 
@@ -238,27 +234,20 @@ export const LoginPage = ({ onNavigate }) => {
           <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block text-center">
             Demo Evaluation Quick Sign-In
           </span>
-          <div className="grid grid-cols-3 gap-1.5">
+          <div className="grid grid-cols-2 gap-2">
             <button
               type="button"
               onClick={() => handleQuickDemo("donor")}
-              className="py-2 px-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-xl text-[11px] font-bold transition-colors text-center"
+              className="py-2 px-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-xl text-xs font-bold transition-colors text-center"
             >
-              Donor Demo
+              Food Donor Demo
             </button>
             <button
               type="button"
               onClick={() => handleQuickDemo("acceptor")}
-              className="py-2 px-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-xl text-[11px] font-bold transition-colors text-center"
+              className="py-2 px-3 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-xl text-xs font-bold transition-colors text-center"
             >
-              Acceptor Demo
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickDemo("admin")}
-              className="py-2 px-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl text-[11px] font-bold transition-colors text-center"
-            >
-              Admin Demo
+              Food Acceptor Demo
             </button>
           </div>
         </div>
