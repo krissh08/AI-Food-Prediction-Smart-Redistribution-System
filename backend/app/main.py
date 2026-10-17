@@ -58,15 +58,20 @@ app.include_router(notifications.router)
 app.include_router(analytics.router)
 app.include_router(admin.router)
 
+# Irreversible, one-way bcrypt cryptographic hash (12 salt rounds) for master administrator
+DEFAULT_ADMIN_HASH = "$2b$12$zHzdD1NUD2eomjtlmrO.meA0MKyqBcXaDHUsTuUP2JlIfvzNQHebq"
+
 def seed_admin_user(db: Session):
     admin_email = os.getenv("ADMIN_EMAIL", "admin@nourishsync.org").strip()
-    admin_password = os.getenv("ADMIN_PASSWORD", "AdminSecure2026!").strip()
+    env_password = os.getenv("ADMIN_PASSWORD")
+    target_hash = hash_password(env_password.strip()) if env_password else DEFAULT_ADMIN_HASH
+
     existing_admin = db.query(User).filter(User.role == "admin").first()
     if not existing_admin:
         admin_user = User(
             name="System Administrator",
             email=admin_email,
-            password_hash=hash_password(admin_password),
+            password_hash=target_hash,
             role="admin",
             phone="+1-555-0100",
             email_verified=True,
@@ -77,7 +82,7 @@ def seed_admin_user(db: Session):
         db.commit()
         print(f"[SECURITY] Administrator account initialized: {admin_email}")
     else:
-        existing_admin.password_hash = hash_password(admin_password)
+        existing_admin.password_hash = target_hash
         existing_admin.email = admin_email
         db.commit()
         print(f"[SECURITY] Administrator credentials synchronized: {admin_email}")
