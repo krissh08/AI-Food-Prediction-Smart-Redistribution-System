@@ -19,9 +19,70 @@ def get_backend_url() -> str:
 
 def _send_smtp_email(to_email: str, subject: str, html_body: str, plain_body: str) -> dict:
     """
-    Sends email via SMTP if credentials are configured in .env or environment.
-    Falls back gracefully to development console dispatch if credentials are not set.
+    Sends email via Resend API (HTTPS port 443), Brevo API (HTTPS port 443),
+    or standard SMTP (port 587).
+    HTTPS APIs are recommended on cloud hosts like Render Free Tier which block outbound SMTP ports.
+    Falls back gracefully to development console simulation if neither is configured.
     """
+    import httpx
+
+    # 1. OPTION A: RESEND HTTPS API (Port 443 - Recommended for Render/Vercel)
+    resend_api_key = os.getenv("RESEND_API_KEY", "").strip()
+    if resend_api_key:
+        resend_from = os.getenv("RESEND_FROM", "NourishSync <onboarding@resend.dev>").strip()
+        try:
+            resp = httpx.post(
+                "https://api.resend.com/emails",
+                headers={
+                    "Authorization": f"Bearer {resend_api_key}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "from": resend_from,
+                    "to": [to_email],
+                    "subject": subject,
+                    "html": html_body,
+                    "text": plain_body
+                },
+                timeout=12.0
+            )
+            if resp.status_code in (200, 201):
+                print(f"[EMAIL SERVICE] Transmitted '{subject}' to {to_email} via Resend HTTPS API (Port 443).")
+                return {"sent": True, "simulated": False, "provider": "resend"}
+            else:
+                print(f"[EMAIL SERVICE WARNING] Resend API returned status {resp.status_code}: {resp.text}")
+        except Exception as e:
+            print(f"[EMAIL SERVICE WARNING] Resend API request failed: {e}")
+
+    # 2. OPTION B: BREVO HTTPS API (Port 443)
+    brevo_api_key = os.getenv("BREVO_API_KEY", "").strip()
+    if brevo_api_key:
+        from_email = os.getenv("EMAIL_FROM", os.getenv("SMTP_USERNAME", "nourishsync@gmail.com")).strip()
+        try:
+            resp = httpx.post(
+                "https://api.brevo.com/v3/smtp/email",
+                headers={
+                    "api-key": brevo_api_key,
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "sender": {"name": "NourishSync", "email": from_email},
+                    "to": [{"email": to_email}],
+                    "subject": subject,
+                    "htmlContent": html_body,
+                    "textContent": plain_body
+                },
+                timeout=12.0
+            )
+            if resp.status_code in (200, 201):
+                print(f"[EMAIL SERVICE] Transmitted '{subject}' to {to_email} via Brevo HTTPS API (Port 443).")
+                return {"sent": True, "simulated": False, "provider": "brevo"}
+            else:
+                print(f"[EMAIL SERVICE WARNING] Brevo API returned status {resp.status_code}: {resp.text}")
+        except Exception as e:
+            print(f"[EMAIL SERVICE WARNING] Brevo API request failed: {e}")
+
+    # 3. OPTION C: STANDARD SMTP (Port 587 - Gmail / Outlook)
     host = os.getenv("SMTP_HOST", "smtp.gmail.com")
     port = int(os.getenv("SMTP_PORT", "587"))
     username = os.getenv("SMTP_USERNAME", os.getenv("SMTP_USER", "")).strip()
@@ -43,22 +104,24 @@ def _send_smtp_email(to_email: str, subject: str, html_body: str, plain_body: st
                 server.login(username, password)
                 server.sendmail(from_email, [to_email], msg.as_string())
 
-            print(f"[EMAIL SERVICE] Transmitted '{subject}' to {to_email} via SMTP ({host}).")
-            return {"sent": True, "simulated": False}
+            print(f"[EMAIL SERVICE] Transmitted '{subject}' to {to_email} via SMTP ({host}:{port}).")
+            return {"sent": True, "simulated": False, "provider": "smtp"}
         except Exception as e:
-            print(f"[EMAIL SERVICE WARNING] SMTP transmission failed ({e}). Falling back to development dispatch.")
+            print(f"[EMAIL SERVICE WARNING] SMTP transmission failed ({e}).")
+            print("[EMAIL SERVICE TIP] Render Free Tier blocks outbound SMTP ports 587/465. Use RESEND_API_KEY in Render Environment Variables for HTTPS delivery.")
 
-    # Development simulation fallback
+    # 4. DEVELOPMENT SIMULATION FALLBACK
     print("\n" + "=" * 72)
-    print("                 NOURISHSYNC EMAIL DISPATCH (DEV MODE)                  ")
+    print("      NOURISHSYNC EMAIL DISPATCH (DEV MODE / SIMULATED - NOT SENT)      ")
     print("=" * 72)
     print(f"To      : {to_email}")
-    print(f"From    : {from_email}")
+    print(f"From    : {from_email or 'nourishsync@gmail.com'}")
     print(f"Subject : {subject}")
+    print("Status  : REAL EMAIL WAS NOT SENT (No valid SMTP/API key configured on this host)")
     print("-" * 72)
     print(plain_body)
     print("=" * 72 + "\n")
-    return {"sent": True, "simulated": True}
+    return {"sent": True, "simulated": True, "provider": "dev_simulation"}
 
 def _wrap_html(title: str, content_html: str) -> str:
     return f"""<!DOCTYPE html>
