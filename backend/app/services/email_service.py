@@ -159,13 +159,13 @@ def _wrap_html(title: str, content_html: str) -> str:
 </body>
 </html>"""
 
-def send_email_a_verification(email: str, token: str, contact_name: str = "Applicant") -> dict:
+def send_email_a_verification(email: str, token: str, contact_name: str = "Applicant", frontend_url: str = None) -> dict:
     """
     Email A: Verify your email address — NourishSync
     Sent immediately upon registration.
     """
-    frontend_url = get_frontend_url()
-    verification_url = f"{frontend_url}/verify-email?token={token}"
+    active_frontend = (frontend_url or get_frontend_url()).rstrip("/")
+    verification_url = f"{active_frontend}/verify-email?token={token}"
     subject = "Verify your email address — NourishSync"
 
     plain_body = f"""Hello {contact_name},

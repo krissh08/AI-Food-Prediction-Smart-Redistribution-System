@@ -1,7 +1,16 @@
 import datetime
-from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, Form, status
+from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, Form, status, Request
 from sqlalchemy.orm import Session
 from typing import Optional
+from urllib.parse import urlparse
+
+def extract_frontend_origin(request: Request) -> Optional[str]:
+    origin = request.headers.get("origin")
+    if not origin and request.headers.get("referer"):
+        parsed = urlparse(request.headers.get("referer"))
+        if parsed.scheme and parsed.netloc:
+            origin = f"{parsed.scheme}://{parsed.netloc}"
+    return origin
 
 from backend.app.database.database import get_db
 from backend.app.models.models import (
@@ -42,7 +51,7 @@ from backend.app.services.document_service import validate_and_save_document
 router = APIRouter(prefix="/api/auth", tags=["Authentication & Verification"])
 
 @router.post("/register/donor", response_model=RegisterResponse)
-def register_donor(req: DonorRegisterRequest, db: Session = Depends(get_db)):
+def register_donor(req: DonorRegisterRequest, request: Request, db: Session = Depends(get_db)):
     if req.password != req.confirm_password:
         raise HTTPException(status_code=400, detail="Passwords do not match.")
 
@@ -161,7 +170,8 @@ def register_donor(req: DonorRegisterRequest, db: Session = Depends(get_db)):
     db.commit()
 
     # 6. Dispatch Email A (Verify your email)
-    email_dispatch = send_email_a_verification(user.email, raw_token, req.owner_name or req.organization_name)
+    origin = extract_frontend_origin(request)
+    email_dispatch = send_email_a_verification(user.email, raw_token, req.owner_name or req.organization_name, frontend_url=origin)
 
     return RegisterResponse(
         message="Registration submitted successfully. Please check your email to verify your address before admin review.",
@@ -176,7 +186,7 @@ def register_donor(req: DonorRegisterRequest, db: Session = Depends(get_db)):
     )
 
 @router.post("/register/acceptor", response_model=RegisterResponse)
-def register_acceptor(req: AcceptorRegisterRequest, db: Session = Depends(get_db)):
+def register_acceptor(req: AcceptorRegisterRequest, request: Request, db: Session = Depends(get_db)):
     if req.password != req.confirm_password:
         raise HTTPException(status_code=400, detail="Passwords do not match.")
 
@@ -297,7 +307,8 @@ def register_acceptor(req: AcceptorRegisterRequest, db: Session = Depends(get_db
 
     db.commit()
 
-    email_dispatch = send_email_a_verification(user.email, raw_token, req.contact_person or req.organization_name)
+    origin = extract_frontend_origin(request)
+    email_dispatch = send_email_a_verification(user.email, raw_token, req.contact_person or req.organization_name, frontend_url=origin)
 
     return RegisterResponse(
         message="Registration submitted successfully. Please check your email to verify your address before admin review.",
@@ -437,7 +448,7 @@ def verify_email(
     )
 
 @router.post("/resend-verification")
-def resend_verification(req: ResendVerificationRequest, db: Session = Depends(get_db)):
+def resend_verification(req: ResendVerificationRequest, request: Request, db: Session = Depends(get_db)):
     """
     Resends verification email with rate limiting and safe response to prevent account enumeration.
     """
@@ -466,7 +477,8 @@ def resend_verification(req: ResendVerificationRequest, db: Session = Depends(ge
     db.add(token_rec)
     db.commit()
 
-    email_dispatch = send_email_a_verification(user.email, raw_token, user.name)
+    origin = extract_frontend_origin(request)
+    email_dispatch = send_email_a_verification(user.email, raw_token, user.name, frontend_url=origin)
 
     return {
         "message": "A new verification link has been sent to your email address.",
